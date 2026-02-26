@@ -17,7 +17,7 @@ return new class extends Migration
                   ->constrained('users')
                   ->cascadeOnDelete();
                   
-            $table->string('collection_name');
+            $table->string('name');
             $table->foreignUuid('parent_id')
                   ->nullable()
                   ->constrained('collections')
