@@ -12,7 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('resources', function (Blueprint $table) {
-            $table->id();
+            $table->uuid()->primary();
+            $table->foreignUuid('user_id')
+                  ->constrained('users')
+                  ->cascadeOnDelete();
+            $table->foreignUuid('collection_id')
+                  ->nullable()
+                  ->constrained('collections')
+                  ->nullOnDelete();
+                  
+            $table->string('title');
+            $table->string('url');
+            $table->string('type' , 30)->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
