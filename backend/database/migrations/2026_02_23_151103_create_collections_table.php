@@ -12,7 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('collections', function (Blueprint $table) {
-            $table->id();
+            $table->uuid()->primary();
+            $table->foreignUuid('user_id')
+                  ->constrained('users')
+                  ->cascadeOnDelete();
+                  
+            $table->string('collection_name');
+            $table->foreignUuid('parent_id')
+                  ->nullable()
+                  ->constrained('collections')
+                  ->nullOnDelete();  
             $table->timestamps();
         });
     }
