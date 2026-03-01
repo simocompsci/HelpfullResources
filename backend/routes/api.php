@@ -5,13 +5,17 @@ use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ResourceController;
 use Illuminate\Routing\Route;
 
-Route::apiResource('users', UserController::class);
-Route::apiResource('collections', CollectionController::class);
-Route::apiResource('resources', ResourceController::class);
+Route::prefix('v1')->group(function () {
 
-// Custom routes
-Route::get('users/{userId}/collections', [CollectionController::class, 'getByUser']);
-Route::get('users/{userId}/collections/{parentId}', [CollectionController::class, 'getByUserAndParent']);
+    Route::apiResource('users', UserController::class);
+    Route::apiResource('collections', CollectionController::class);
+    Route::apiResource('resources', ResourceController::class);
 
-Route::get('users/{userId}/resources', [ResourceController::class, 'getUserResources']);
-Route::get('users/{userId}/collections/{collectionId}/resources', [ResourceController::class, 'getByUserAndCollection']);
+    // Custom routes
+    Route::get('users/{userId}/collections', [CollectionController::class, 'getByUser']);
+    Route::get('users/{userId}/collections/{parentId}', [CollectionController::class, 'getByUserAndParent']);
+
+    Route::get('users/{userId}/resources', [ResourceController::class, 'getUserResources']);
+    Route::get('users/{userId}/collections/{collectionId}/resources', [ResourceController::class, 'getByUserAndCollection']);
+
+});
