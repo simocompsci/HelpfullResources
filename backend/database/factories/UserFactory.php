@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'username' => $this->faker->unique()->userName(),
             'email' => $this->faker->unique()->safeEmail(),
             'role' => $this->faker->randomElement(['USER']),
-            'password' => Hash::make('password'), // default password
+            'password_hash' => Hash::make('password'), // default password
         ];
     }
 

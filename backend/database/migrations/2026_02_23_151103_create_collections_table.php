@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('collections', function (Blueprint $table) {
             $table->uuid('id')->primary();
+
             $table->foreignUuid('user_id')
                 ->constrained('users')
                 ->cascadeOnDelete();
@@ -20,10 +21,6 @@ return new class extends Migration
             $table->string('name');
             $table->uuid('parent_id')->nullable();
 
-            $table->foreign('parent_id')
-                ->references('id')
-                ->on('collections')
-                ->nullOnDelete();
             $table->timestamps();
         });
     }
