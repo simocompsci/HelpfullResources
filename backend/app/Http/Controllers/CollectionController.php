@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\CollectionService;
-use Illuminate\Http\Request;
+use App\Http\Requests\CreateCollectionRequest;
+use App\Http\Requests\UpdateCollectionRequest;
 
 class CollectionController extends Controller
 {
@@ -14,7 +15,6 @@ class CollectionController extends Controller
         $this->collectionService = $collectionService;
     }
 
-    // GET /api/collections
     public function index()
     {
         return response()->json(
@@ -22,7 +22,6 @@ class CollectionController extends Controller
         );
     }
 
-    // GET /api/collections/{id}
     public function show(string $id)
     {
         return response()->json(
@@ -30,16 +29,14 @@ class CollectionController extends Controller
         );
     }
 
-    // POST /api/collections
-    public function store(Request $request)
+    public function store(CreateCollectionRequest $request)
     {
         return response()->json(
-            $this->collectionService->addCollection($request->all()),
+            $this->collectionService->addCollection($request->validated()),
             201
         );
     }
 
-    // GET /api/users/{userId}/collections
     public function getByUser(string $userId)
     {
         return response()->json(
@@ -47,7 +44,6 @@ class CollectionController extends Controller
         );
     }
 
-    // GET /api/users/{userId}/collections/{parentId}
     public function getByUserAndParent(string $userId, string $parentId)
     {
         return response()->json(
@@ -55,15 +51,13 @@ class CollectionController extends Controller
         );
     }
 
-    // PUT /api/collections/{id}
-    public function update(Request $request, string $id)
+    public function update(UpdateCollectionRequest $request, string $id)
     {
         return response()->json(
-            $this->collectionService->updateCollection($request->all(), $id)
+            $this->collectionService->updateCollection($request->validated(), $id)
         );
     }
 
-    // DELETE /api/collections/{id}
     public function destroy(string $id)
     {
         $this->collectionService->deleteById($id);
