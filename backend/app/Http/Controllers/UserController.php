@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\UserService;
-use Illuminate\Http\Request;
+use App\Http\Requests\RegisterUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -31,19 +32,19 @@ class UserController extends Controller
     }
 
     // POST /api/users
-    public function store(Request $request)
+    public function store(RegisterUserRequest $request)
     {
         return response()->json(
-            $this->userService->createUser($request->all()),
+            $this->userService->createUser($request->validated()),
             201
         );
     }
 
     // PUT /api/users/{id}
-    public function update(Request $request, string $id)
+    public function update(UpdateUserRequest $request, string $id)
     {
         return response()->json(
-            $this->userService->updateUser($request->all(), $id)
+            $this->userService->updateUser($request->validated(), $id)
         );
     }
 
