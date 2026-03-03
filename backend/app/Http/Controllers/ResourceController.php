@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\ResourceService;
+use App\Http\Requests\CreateResourceRequest;
+use App\Http\Requests\UpdateResourceRequest;
 use Illuminate\Http\Request;
 
 class ResourceController extends Controller
@@ -14,7 +16,6 @@ class ResourceController extends Controller
         $this->resourceService = $resourceService;
     }
 
-    // GET /api/resources?page=1&per_page=20
     public function index(Request $request)
     {
         return response()->json(
@@ -25,7 +26,6 @@ class ResourceController extends Controller
         );
     }
 
-    // GET /api/resources/{id}
     public function show(string $id)
     {
         return response()->json(
@@ -33,16 +33,14 @@ class ResourceController extends Controller
         );
     }
 
-    // POST /api/resources
-    public function store(Request $request)
+    public function store(CreateResourceRequest $request)
     {
         return response()->json(
-            $this->resourceService->addResource($request->all()),
+            $this->resourceService->addResource($request->validated()),
             201
         );
     }
 
-    // GET /api/users/{userId}/resources?title=...&type=...
     public function getUserResources(Request $request, string $userId)
     {
         return response()->json(
@@ -54,7 +52,6 @@ class ResourceController extends Controller
         );
     }
 
-    // GET /api/users/{userId}/collections/{collectionId}/resources
     public function getByUserAndCollection(string $userId, string $collectionId)
     {
         return response()->json(
@@ -62,15 +59,13 @@ class ResourceController extends Controller
         );
     }
 
-    // PUT /api/resources/{id}
-    public function update(Request $request, string $id)
+    public function update(UpdateResourceRequest $request, string $id)
     {
         return response()->json(
-            $this->resourceService->updateResource($request->all(), $id)
+            $this->resourceService->updateResource($request->validated(), $id)
         );
     }
 
-    // DELETE /api/resources/{id}
     public function destroy(string $id)
     {
         $this->resourceService->deleteById($id);
