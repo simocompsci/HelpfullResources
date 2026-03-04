@@ -7,13 +7,23 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class CollectionResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'user_id' => $this->user_id,
+            'parent_id' => $this->parent_id,
+
+            'children' => CollectionResource::collection(
+                $this->whenLoaded('children')
+            ),
+
+            'resources' => ResourceResource::collection(
+                $this->whenLoaded('resources')
+            ),
+
+            'created_at' => $this->created_at,
+        ];
     }
 }
