@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\UserService;
 use App\Http\Requests\RegisterUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Resources\UserResource;
 
 class UserController extends Controller
 {
@@ -15,18 +16,16 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
-    // GET /api/users
     public function index()
     {
-        return response()->json(
+        return UserResource::collection(
             $this->userService->getUsers()
         );
     }
 
-    // GET /api/users/{id}
     public function show(string $id)
     {
-        return response()->json(
+        return new UserResource(
             $this->userService->getUser($id)
         );
     }
