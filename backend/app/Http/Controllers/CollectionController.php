@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\CollectionService;
 use App\Http\Requests\CreateCollectionRequest;
 use App\Http\Requests\UpdateCollectionRequest;
+use App\Http\Resources\CollectionResource;
 
 class CollectionController extends Controller
 {
@@ -17,50 +18,52 @@ class CollectionController extends Controller
 
     public function index()
     {
-        return response()->json(
+        return CollectionResource::collection(
             $this->collectionService->getCollections()
         );
     }
 
     public function show(string $id)
     {
-        return response()->json(
+        return new CollectionResource(
             $this->collectionService->getCollection($id)
         );
     }
 
     public function store(CreateCollectionRequest $request)
     {
-        return response()->json(
-            $this->collectionService->addCollection($request->validated()),
-            201
-        );
+        $collection = $this->collectionService
+            ->addCollection($request->validated());
+
+        return new CollectionResource($collection);
     }
 
     public function getByUser(string $userId)
     {
-        return response()->json(
+        return CollectionResource::collection(
             $this->collectionService->getByUserId($userId)
         );
     }
 
     public function getByUserAndParent(string $userId, string $parentId)
     {
-        return response()->json(
+        return CollectionResource::collection(
             $this->collectionService->getByUserAndParent($userId, $parentId)
         );
     }
 
     public function update(UpdateCollectionRequest $request, string $id)
     {
-        return response()->json(
-            $this->collectionService->updateCollection($request->validated(), $id)
-        );
+        $collection = $this->collectionService
+            ->updateCollection($request->validated(), $id);
+
+        return new CollectionResource($collection);
     }
 
     public function destroy(string $id)
     {
         $this->collectionService->deleteById($id);
+
         return response()->json(null, 204);
     }
 }
