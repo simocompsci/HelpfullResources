@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthenticationRequest as RequestsAuthenticationRequest;
+use App\Http\Requests\RegisterUserRequest as RequestsRegisterUserRequest;
 use App\Models\User;
 use AuthenticationRequest;
 use Illuminate\Http\Request;
@@ -9,11 +11,11 @@ use RegisterUserRequest;
 
 class AuthController extends Controller
 {
-    public function login(AuthenticationRequest $request){
+    public function login(RequestsAuthenticationRequest $request){
         $user = User::where('username' , $request->username)->first();
     }
 
-    public function register(RegisterUserRequest $request){}
+    public function register(RequestsRegisterUserRequest $request){}
 
     public function logout(){}
 
