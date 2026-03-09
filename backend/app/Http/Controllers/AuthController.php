@@ -5,26 +5,32 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AuthenticationRequest as RequestsAuthenticationRequest;
 use App\Http\Requests\RegisterUserRequest as RequestsRegisterUserRequest;
 use App\Models\User;
-use AuthenticationRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use RegisterUserRequest;
+use Illuminate\Validation\ValidationException as ValidationValidationException;
+use League\Config\Exception\ValidationException;
+use Nette\Schema\ValidationException as SchemaValidationException;
 
 class AuthController extends Controller
 {
-    public function login(RequestsAuthenticationRequest $request){
-        $user = User::where('username' , $request->username)->first();
+    public function login(RequestsAuthenticationRequest $request)
+    {
+        $user = User::where('username', $request->username)->first();
 
-        if (!$user || !Hash::check($request->password , $user->password)) {
-            # code...
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            throw ValidationValidationException::withMessages([
+                'email' => ['The provided credentials are incorrect.'],
+            ]);
         }
+        return response()->json([
+            'token' => $user->createToken($request->device_name)->plainTextToken
+        ]);
     }
 
-    public function register(RequestsRegisterUserRequest $request){}
+    public function register(RequestsRegisterUserRequest $request) {}
 
-    public function logout(){}
+    public function logout() {}
 
-    public function me(){}
+    public function me() {}
 
 
     // will probably add these later
