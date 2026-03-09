@@ -7,12 +7,17 @@ use App\Http\Requests\RegisterUserRequest as RequestsRegisterUserRequest;
 use App\Models\User;
 use AuthenticationRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use RegisterUserRequest;
 
 class AuthController extends Controller
 {
     public function login(RequestsAuthenticationRequest $request){
         $user = User::where('username' , $request->username)->first();
+
+        if (!$user || !Hash::check($request->password , $user->password)) {
+            # code...
+        }
     }
 
     public function register(RequestsRegisterUserRequest $request){}
