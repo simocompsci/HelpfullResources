@@ -16,7 +16,11 @@ class AuthController extends Controller
 {
     public function login(RequestsAuthenticationRequest $request)
     {
-        if (!Auth::attempt($request)) {
+        $credentials = $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+        if (!Auth::attempt($credentials)) {
             throw ValidationValidationException::withMessages([
                 'username' => ['Invalid credentials.']
             ]);

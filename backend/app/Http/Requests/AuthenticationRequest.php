@@ -14,8 +14,9 @@ class AuthenticationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username' => ['required', 'username'],
-            'password' => ['required', 'string', 'min:6'],
+            'username' => 'required|string',
+            'password' => 'required|string',
         ];
+
     }
 }
