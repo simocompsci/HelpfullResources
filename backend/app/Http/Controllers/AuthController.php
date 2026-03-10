@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AuthenticationRequest as RequestsAuthenticationRequest;
 use App\Http\Requests\RegisterUserRequest as RequestsRegisterUserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException as ValidationValidationException;
 use League\Config\Exception\ValidationException;
@@ -14,15 +16,19 @@ class AuthController extends Controller
 {
     public function login(RequestsAuthenticationRequest $request)
     {
-        $user = User::where('username', $request->username)->first();
-
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            throw ValidationValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
-            ]);
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            return response()->json(['message' => 'Invalid credentials'], 401);
         }
+
+        $user = Auth::user();
+        $token = $user->createToken('auth_token')->plainTextToken;
+
         return response()->json([
-            'token' => $user->createToken($request->device_name)->plainTextToken
+            'data' => [
+                'user' => new UserResource($user),
+                'message' => 'Login success',
+                'access_token' => 'Bearer ' . $token,
+            ]
         ]);
     }
 
