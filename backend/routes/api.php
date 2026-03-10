@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('v1/login' , AuthController::class , 'login');
+Route::get('v1/register' , AuthController::class , 'register');
+
 
 Route::prefix('v1')->group(function () {
 
@@ -18,4 +23,10 @@ Route::prefix('v1')->group(function () {
     Route::get('users/{userId}/resources', [ResourceController::class, 'getUserResources']);
     Route::get('users/{userId}/collections/{collectionId}/resources', [ResourceController::class, 'getByUserAndCollection']);
 
-});
+    // Auth routes 
+    Route::get('logout' , AuthController::class , 'logout');
+    Route::get('me' , AuthController::class , 'me');
+
+
+
+})->middleware('auth:sanctum');
