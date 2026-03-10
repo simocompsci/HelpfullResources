@@ -16,19 +16,17 @@ class AuthController extends Controller
 {
     public function login(RequestsAuthenticationRequest $request)
     {
-        if (!Auth::attempt($request->only('email', 'password'))) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
+        if (!Auth::attempt($request)) {
+            throw ValidationValidationException::withMessages([
+                'username' => ['Invalid credentials.']
+            ]);
         }
 
-        $user = Auth::user();
-        $token = $user->createToken('auth_token')->plainTextToken;
+        $user = $request->user();
 
         return response()->json([
-            'data' => [
-                'user' => new UserResource($user),
-                'message' => 'Login success',
-                'access_token' => 'Bearer ' . $token,
-            ]
+            'user' => new UserResource($user),
+            'token' => $user->createToken('api-token')->plainTextToken
         ]);
     }
 
@@ -45,4 +43,6 @@ class AuthController extends Controller
     // changePassword()	POST /auth/change-password	update password
     // forgotPassword()	POST /auth/forgot-password	send reset email
     // resetPassword()  POST /auth/reset-password   reset password
+
+
 }
