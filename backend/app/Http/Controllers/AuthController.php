@@ -42,10 +42,15 @@ class AuthController extends Controller
         $user = $this->userService
             ->createUser($request->validated());
 
+        $token = $user->createToken('api-token')->plainTextToken;
+
         return response()->json([
-            'user' => new UserResource($user),
-            'message' => 'user created successfully'
-        ] , 201);
+            'data' => [
+                'user' => new UserResource($user),
+                'token' => $token
+            ],
+            'message' => 'User created successfully'
+        ], 201);
     }
 
     public function logout() {}
