@@ -6,6 +6,7 @@ use App\Http\Requests\AuthenticationRequest as RequestsAuthenticationRequest;
 use App\Http\Requests\RegisterUserRequest as RequestsRegisterUserRequest;
 use App\Http\Resources\UserResource;
 use App\Services\UserService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -53,9 +54,21 @@ class AuthController extends Controller
         ], 201);
     }
 
-    public function logout() {}
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
 
-    public function me() {}
+        return response()->json([
+            'message' => 'Logged out successfully'
+        ]);
+    }
+
+    public function me(Request $request)
+    {
+        return response()->json([
+            'user' => new UserResource($request->user())
+        ]);
+    }
 
 
     // will probably add these later
