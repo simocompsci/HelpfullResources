@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AuthenticationRequest as RequestsAuthenticationRequest;
 use App\Http\Requests\RegisterUserRequest as RequestsRegisterUserRequest;
 use App\Http\Resources\UserResource;
+use App\Services\UserService;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    private UserService $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     public function login(RequestsAuthenticationRequest $request)
     {
         $credentials = $request->validate([
@@ -29,8 +37,12 @@ class AuthController extends Controller
         ]);
     }
 
-    public function register(RequestsRegisterUserRequest $request) {
-        
+    public function register(RequestsRegisterUserRequest $request)
+    {
+        $user = $this->userService
+            ->createUser($request->validated());
+
+        return new UserResource($user);
     }
 
     public function logout() {}
