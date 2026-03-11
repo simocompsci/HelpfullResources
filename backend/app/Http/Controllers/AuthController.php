@@ -21,9 +21,9 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         if (!Auth::attempt($credentials)) {
-            throw ValidationValidationException::withMessages([
-                'username' => ['Invalid credentials.']
-            ]);
+            return response()->json([
+                'message' => 'Invalid credentials'
+            ], 401);
         }
 
         $user = $request->user();
