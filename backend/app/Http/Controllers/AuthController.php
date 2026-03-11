@@ -5,12 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AuthenticationRequest as RequestsAuthenticationRequest;
 use App\Http\Requests\RegisterUserRequest as RequestsRegisterUserRequest;
 use App\Http\Resources\UserResource;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\ValidationException as ValidationValidationException;
-use League\Config\Exception\ValidationException;
-use Nette\Schema\ValidationException as SchemaValidationException;
 
 class AuthController extends Controller
 {
@@ -34,7 +29,9 @@ class AuthController extends Controller
         ]);
     }
 
-    public function register(RequestsRegisterUserRequest $request) {}
+    public function register(RequestsRegisterUserRequest $request) {
+        
+    }
 
     public function logout() {}
 
