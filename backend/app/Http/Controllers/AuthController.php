@@ -42,7 +42,10 @@ class AuthController extends Controller
         $user = $this->userService
             ->createUser($request->validated());
 
-        return new UserResource($user);
+        return response()->json([
+            'user' => new UserResource($user),
+            'message' => 'user created successfully'
+        ] , 201);
     }
 
     public function logout() {}
