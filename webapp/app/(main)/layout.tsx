@@ -1,5 +1,11 @@
 import NavBar from "../components/shared/NavBar";
-export default function MainLayout({ children }) {
+import type { ReactNode } from "react";
+
+export default function MainLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <>
       <NavBar />
