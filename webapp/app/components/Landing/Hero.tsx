@@ -46,9 +46,9 @@ export default function Hero() {
         </button>
       </section>
 
-      {/* IMAGE SECTION (unchanged layout) */}
-      <section className="mt-75 md:mt-80">
-        <div className="relative mx-auto mt-150">
+      {/* IMAGE SECTION */}
+      <section className="mt-16 md:mt-24 w-full">
+        <div className="relative mx-auto h-[800px] md:h-[850px]">
           {/* Blue rounded background */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-gray-300 to-gray-100 w-[350px] h-[730px] md:w-[1300px] md:h-[780px] rounded-4xl"></div>
 
