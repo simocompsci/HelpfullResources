@@ -1,4 +1,4 @@
-import { BookAudio, FileText, Globe, UploadCloud, Youtube } from "lucide-react";
+import { BookAudio, FileText, Globe, UploadCloud, Youtube, Home, FolderHeart, Search, Settings } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -65,6 +65,26 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
+      {/* Floating Bottom Navigation */}
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white border border-[#e4e7ff] rounded-3xl shadow-sm px-6 py-4 flex items-center justify-between gap-8 z-50">
+        <button className="flex flex-col items-center gap-1 text-[#242c51] active:scale-95 transition-all bg-[#f0efff] px-3 py-2 rounded-xl">
+          <Home size={20} className="fill-[#242c51]" />
+          <span className="font-headline font-bold text-[10px] tracking-widest uppercase">Home</span>
+        </button>
+        <button className="flex flex-col items-center gap-1 text-[#515981] hover:text-[#0a79ff] active:scale-95 transition-all">
+          <FolderHeart size={20} />
+          <span className="font-headline font-bold text-[10px] tracking-widest uppercase">Collections</span>
+        </button>
+        <button className="flex flex-col items-center gap-1 text-[#515981] hover:text-[#0a79ff] active:scale-95 transition-all">
+          <Search size={20} />
+          <span className="font-headline font-bold text-[10px] tracking-widest uppercase">Search</span>
+        </button>
+        <button className="flex flex-col items-center gap-1 text-[#515981] hover:text-[#0a79ff] active:scale-95 transition-all">
+          <Settings size={20} />
+          <span className="font-headline font-bold text-[10px] tracking-widest uppercase">Settings</span>
+        </button>
+      </div>
     </div>
   );
 }
