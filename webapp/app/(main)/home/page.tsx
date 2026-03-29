@@ -58,7 +58,7 @@ export default function HomePage() {
                   className="w-full bg-[#f0efff] border-0 focus:ring-2 focus:ring-[#0a79ff] rounded-xl px-6 py-4 text-[#242c51] font-mono transition-all outline-none"
                 />
               </div>
-              <button className="flex items-center justify-center gap-2 w-[220px] mx-auto bg-black text-white py-4 rounded-xl font-mono text-sm hover:bg-gray-800 active:scale-95 transition-all duration-200">
+              <button className="flex items-center justify-center gap-2 w-[220px] mx-auto bg-black text-white py-4 rounded-xl font-mono font-semibold text-sm hover:bg-gray-800 active:scale-95 transition-all duration-200">
                 <span className="text-xl leading-none font-light">+</span> Upload Resource
               </button>
             </div>
