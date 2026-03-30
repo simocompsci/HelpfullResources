@@ -18,7 +18,7 @@ export default function HomePage() {
 
         {/* Platform Selection Section */}
         <section className="mb-10 sm:mb-12 flex justify-center">
-          <div className="flex flex-wrap justify-start bg-[#e4e7ff] rounded-xl p-1 gap-1 w-full sm:w-auto">            <button className="flex-shrink-0 flex items-center gap-2 bg-white text-[#242c51] px-4 sm:px-5 py-3 rounded-lg shadow-sm active:scale-95 transition-all">
+          <div className="flex flex-wrap justify-start sm:justify-center bg-[#e4e7ff] rounded-xl p-1 gap-1 w-full sm:w-auto">            <button className="flex-shrink-0 flex items-center gap-2 bg-white text-[#242c51] px-4 sm:px-5 py-3 rounded-lg shadow-sm active:scale-95 transition-all">
             <Youtube size={18} />
             <span className="font-mono font-bold text-[10px] sm:text-[11px] tracking-wider uppercase">YOUTUBE</span>
           </button>
@@ -38,15 +38,7 @@ export default function HomePage() {
               <span className="font-mono font-bold text-[10px] sm:text-[11px] tracking-wider uppercase">AUDIO</span>
             </button>
 
-            <button className="flex-shrink-0 flex items-center gap-2 text-[#515981] px-4 sm:px-5 py-3 rounded-lg hover:bg-white/50 active:scale-95 transition-all">
-              <BookAudio size={18} />
-              <span className="font-mono font-bold text-[10px] sm:text-[11px] tracking-wider uppercase">AUDIO</span>
-            </button>
-
-            <button className="flex-shrink-0 flex items-center gap-2 text-[#515981] px-4 sm:px-5 py-3 rounded-lg hover:bg-white/50 active:scale-95 transition-all">
-              <BookAudio size={18} />
-              <span className="font-mono font-bold text-[10px] sm:text-[11px] tracking-wider uppercase">AUDIO</span>
-            </button>
+          
 
           </div>
         </section>
