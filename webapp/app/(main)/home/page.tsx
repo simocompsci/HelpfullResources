@@ -38,7 +38,6 @@ export default function HomePage() {
               <span className="font-mono font-bold text-[10px] sm:text-[11px] tracking-wider uppercase">AUDIO</span>
             </button>
 
-          
 
           </div>
         </section>
@@ -78,9 +77,9 @@ export default function HomePage() {
       </main>
 
       {/* Floating Bottom Navigation */}
-      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto bg-white border border-[#e4e7ff] rounded-3xl shadow-sm px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between sm:gap-8 gap-4 z-50">
+      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto bg-white border border-gray-300 rounded-3xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between md:gap-8 gap-4 z-50">
 
-        <button className="flex flex-col items-center gap-1 text-[#242c51] active:scale-95 transition-all bg-[#f0efff] px-2 sm:px-3 py-2 rounded-xl">
+        <button className="flex flex-col items-center gap-1 text-[#242c51] active:scale-95 transition-all bg-[#f0efff] px-5 md:px-6 py-2 rounded-xl">
           <Home size={20} className="fill-[#242c51]" />
           <span className="font-mono font-bold text-[9px] sm:text-[10px] tracking-widest uppercase">Home</span>
         </button>
