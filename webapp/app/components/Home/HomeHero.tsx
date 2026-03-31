@@ -5,6 +5,10 @@ export default function HeroHome() {
     return (
         <>
             {/* Hero Header Section */}
+            <nav className="flex justify-between mb-10">
+                <h1 className="text-4xl font-serif font-semibold">Logo</h1>
+                <button className="bg-black text-white py-3 px-6 font-mono font-semibold rounded-xl">Logout</button>
+            </nav>
             <section className="mb-8 sm:mb-10 text-center">
                 <h2 className="font-serif font-extrabold text-3xl sm:text-4xl md:text-6xl text-[#242c51] leading-[1.1] mb-4 sm:mb-6 tracking-tighter">
                     ResourceSaver &ndash; Your Digital Resource Manager

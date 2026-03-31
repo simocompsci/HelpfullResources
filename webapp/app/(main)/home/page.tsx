@@ -1,6 +1,6 @@
 import HeroHome from "@/app/components/Home/HomeHero";
 import UploadSection from "@/app/components/Home/UploadSection";
-import { BookAudio, FileText, Globe, Youtube, Home, FolderHeart, Search, Settings } from "lucide-react";
+import { Home, FolderHeart, Search, Settings } from "lucide-react";
 
 export default function HomePage() {
   return (
