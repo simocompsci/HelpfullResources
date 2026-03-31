@@ -1,7 +1,7 @@
 import { BookAudio, FileText, Globe, Youtube } from "lucide-react";
 
 
-export default function Content() {
+export default function HeroHome() {
     return (
         <>
             {/* Hero Header Section */}

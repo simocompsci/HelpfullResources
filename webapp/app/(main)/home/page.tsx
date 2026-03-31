@@ -1,3 +1,4 @@
+import HeroHome from "@/app/components/Home/HomeHero";
 import UploadSection from "@/app/components/Home/UploadSection";
 import { BookAudio, FileText, Globe, Youtube, Home, FolderHeart, Search, Settings } from "lucide-react";
 
@@ -6,11 +7,7 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen pb-28 sm:pb-24 font-body bg-[#f7f5ff]">
 
       <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 mb-16 flex-grow">
-
-        
-
-        
-
+        <HeroHome/>
         <UploadSection/>
       </main>
 
