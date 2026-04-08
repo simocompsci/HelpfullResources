@@ -15,7 +15,7 @@ export default function CollectionsPage() {
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
         <div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-black mb-1">
+          <h1 className="text-4xl md:text-5xl font-serif font-semibold tracking-tight text-black mb-4">
             COLLECTIONS
           </h1>
           <p className="text-[#515981] font-mono text-sm md:text-base">
@@ -33,7 +33,7 @@ export default function CollectionsPage() {
         {collections.map((col, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-start bg-[#f1f1f2] rounded-3xl pt-8 pb-6 px-4 hover:bg-[#e8e8e9] transition-all cursor-pointer group shadow-sm border border-transparent hover:border-gray-200"
+            className="flex flex-col items-center justify-start bg-[#f1f1f2] rounded-3xl pt-8 pb-6 px-4 hover:bg-[#e8e8e9] transition-all cursor-pointer group border border-transparent hover:border-gray-200"
           >
             {/* Folder SVG wrapper */}
             <div className="relative w-28 h-24 md:w-36 md:h-32 mb-6 transition-transform group-hover:-translate-y-1">
