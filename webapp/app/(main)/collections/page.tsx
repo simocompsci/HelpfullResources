@@ -35,17 +35,19 @@ export default function CollectionsPage() {
             key={index}
             className="flex flex-col items-center justify-center bg-[#f9f9fb] rounded-[2rem] p-6 md:p-8 hover:bg-[#f0efff] transition-all cursor-pointer group"
           >
-            {/* Folder SVG wrapper */}
+            {/* Folder Graphic */}
             <div className="relative w-32 h-24 md:w-40 md:h-28 mb-4 md:mb-6 transition-transform group-hover:scale-105">
-              {/* Back flap (white) */}
-              <div className="absolute top-0 right-2 w-[85%] h-full bg-white border border-gray-100 rounded-xl shadow-sm z-0"></div>
-              {/* Front flap (dark grey) */}
-              <div
-                className="absolute bottom-0 left-0 w-full h-[85%] bg-[#424856] rounded-xl z-10"
-                style={{
-                  clipPath: "polygon(0 15%, 25% 15%, 35% 0, 100% 0, 100% 100%, 0 100%)",
-                }}
-              ></div>
+              
+              {/* Back flap (white paper) */}
+              <div className="absolute top-2 right-2 w-[85%] h-[85%] bg-white border border-gray-200 rounded-xl shadow-sm z-0"></div>
+              
+              {/* Front Folder */}
+              {/* Folder Tab */}
+              <div className="absolute top-0 left-0 w-[45%] h-[30%] bg-[#363a45] rounded-t-xl z-10"></div>
+              
+              {/* Folder Main Body */}
+              <div className="absolute bottom-0 left-0 w-full h-[80%] bg-[#363a45] rounded-xl rounded-tl-none z-20 shadow-sm text-[#363a45]"></div>
+
             </div>
 
             {/* Typography */}
