@@ -36,26 +36,26 @@ export default function AIPage() {
           
           {/* Suggestion Card 1 */}
           <button className="flex flex-col items-start p-4 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 active:scale-[0.98] transition-all text-left w-full h-full">
-            <span className="font-semibold text-gray-900 text-sm">View all</span>
-            <span className="text-gray-500 text-sm mt-1">my cameras</span>
+            <span className="font-semibold font-mono text-gray-900 text-sm">View all</span>
+            <span className="text-gray-500 font-mono text-sm mt-1">my cameras</span>
           </button>
 
           {/* Suggestion Card 2 */}
           <button className="flex flex-col items-start p-4 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 active:scale-[0.98] transition-all text-left w-full h-full">
-            <span className="font-semibold text-gray-900 text-sm">Show me</span>
-            <span className="text-gray-500 text-sm mt-1">my smart home hub</span>
+            <span className="font-semibold font-mono text-gray-900 text-sm">Show me</span>
+            <span className="text-gray-500 font-mono text-sm mt-1">my smart home hub</span>
           </button>
 
           {/* Suggestion Card 3 */}
           <button className="flex flex-col items-start p-4 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 active:scale-[0.98] transition-all text-left w-full h-full">
-            <span className="font-semibold text-gray-900 text-sm">How much</span>
-            <span className="text-gray-500 text-sm mt-1 mb-1">electricity have I used this month?</span>
+            <span className="font-semibold font-mono text-gray-900 text-sm">How much</span>
+            <span className="text-gray-500 font-mono text-sm mt-1 mb-1">electricity have I used this month?</span>
           </button>
 
           {/* Suggestion Card 4 */}
           <button className="flex flex-col items-start p-4 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 active:scale-[0.98] transition-all text-left w-full h-full">
-            <span className="font-semibold text-gray-900 text-sm">How much</span>
-            <span className="text-gray-500 text-sm mt-1">water have I used this month?</span>
+            <span className="font-semibold font-mono text-gray-900 text-sm">How much</span>
+            <span className="text-gray-500 font-mono text-sm mt-1">water have I used this month?</span>
           </button>
 
         </div>
