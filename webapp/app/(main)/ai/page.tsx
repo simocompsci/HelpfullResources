@@ -4,6 +4,16 @@ export default function AIPage() {
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-[60vh] max-w-2xl mx-auto px-4 mt-12 sm:mt-24">
       
+      {/* Page Header */}
+      <div className="w-full mb-10">
+        <h1 className="text-4xl md:text-5xl font-serif font-semibold tracking-tight text-black mb-4">
+          AI RESEARCH
+        </h1>
+        <p className="text-[#515981] font-mono text-sm md:text-base">
+          Leverage our intelligent search to find patterns, synthesize information, and query your knowledge base naturally.
+        </p>
+      </div>
+
       {/* 2x2 Grid of Suggestions */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full mb-6">
         
