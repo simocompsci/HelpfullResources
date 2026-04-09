@@ -23,7 +23,7 @@ export default function AIPage() {
         <div className="w-full relative flex items-center bg-[#f0efff] rounded-2xl border border-transparent focus-within:border-[#bfc2d3] focus-within:bg-white transition-colors duration-200 mb-8">
           <input 
             type="text" 
-            placeholder="Send a message..." 
+            placeholder="Search for your needed resources..." 
             className="w-full bg-transparent outline-none py-4 pl-5 pr-12 text-gray-900 placeholder-gray-400 font-medium"
           />
           <button className="absolute right-3 p-2 text-gray-400 hover:text-gray-700 transition-colors">
