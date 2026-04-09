@@ -6,6 +6,11 @@ const collections = [
   { title: "Recipes", items: 55 },
   { title: "Web Components", items: 214 },
   { title: "Architecture", items: 16 },
+  { title: "Photography", items: 56 },{ title: "Design Inspiration", items: 128 },
+  { title: "Research Papers", items: 42 },
+  { title: "Recipes", items: 55 },
+  { title: "Web Components", items: 214 },
+  { title: "Architecture", items: 16 },
   { title: "Photography", items: 56 },
 ];
 
