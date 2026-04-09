@@ -32,10 +32,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           <span className="font-mono font-bold text-[9px] sm:text-[10px] tracking-widest uppercase">Collections</span>
         </Link>
 
-        <button className="flex-1 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all sm:w-24 md:w-28 py-2 rounded-full text-[#515981] hover:text-[#0a79ff]">
-          <Search size={20} />
+        <Link href="/ai" className={`flex-1 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all sm:w-24 md:w-28 py-2 rounded-full ${pathname === '/ai' ? 'bg-[#f0efff] text-[#242c51]' : 'text-[#515981] hover:text-[#0a79ff]'}`}>
+          <Search size={20} className={pathname === '/ai' ? "stroke-[#242c51]" : ""} />
           <span className="font-mono font-bold text-[9px] sm:text-[10px] tracking-widest uppercase">Search</span>
-        </button>
+        </Link>
 
         <button className="flex-1 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all sm:w-24 md:w-28 py-2 rounded-full text-[#515981] hover:text-[#0a79ff]">
           <Settings size={20} />
