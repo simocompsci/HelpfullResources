@@ -5,7 +5,7 @@ export default function SettingsPage() {
     <div className="w-full relative">
       
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4 w-full max-w-3xl m-auto">
         <div>
           <h1 className="text-4xl md:text-5xl font-serif font-semibold tracking-tight text-black mb-4">
             SETTINGS
@@ -17,7 +17,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Settings Sections */}
-      <div className="flex flex-col gap-6 w-full max-w-3xl">
+      <div className="flex flex-col gap-6 w-full max-w-3xl m-auto">
         
         {/* Profile Card */}
         <section className="flex flex-col bg-white border border-gray-200 rounded-3xl p-6">
