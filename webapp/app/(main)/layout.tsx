@@ -20,7 +20,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       </main>
 
       {/* Floating Bottom Navigation */}
-      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto bg-white border border-gray-300 rounded-full p-2 flex items-center justify-between gap-1 sm:gap-2 z-50 shadow-sm text-center">
+      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto bg-white border border-gray-300 rounded-full p-2 flex items-center justify-between gap-1 sm:gap-2 z-50 text-center">
 
         <Link href="/home" className={`flex-1 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all sm:w-24 md:w-28 py-2 rounded-full ${pathname === '/home' ? 'bg-[#f0efff] text-[#242c51]' : 'text-[#515981] hover:text-[#0a79ff]'}`}>
           <Home size={20} className={pathname === '/home' ? "fill-[#242c51]" : ""} />
