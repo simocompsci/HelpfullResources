@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, FolderHeart, Search, Settings } from "lucide-react";
+import { Home, FolderHeart, Search, Settings, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,7 +13,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         {/* Navigation / Header */}
         <nav className="flex justify-between mb-10 items-center">
             <h1 className="text-4xl font-serif font-semibold">Logo</h1>
-            <button className="bg-black text-white py-3 px-6 font-mono font-semibold text-sm sm:text-base rounded-xl active:scale-95 transition-all">Logout</button>
+            <Link href="/settings" className="bg-gray-200 p-3 rounded-full text-[#242c51] active:scale-95 transition-all outline-none border border-transparent hover:border-[#bfc2d3]">
+              <User size={24} />
+            </Link>
         </nav>
 
         {children}
