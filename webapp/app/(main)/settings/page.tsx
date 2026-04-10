@@ -86,7 +86,7 @@ export default function SettingsPage() {
         </section>
 
         {/* Danger Zone */}
-        <section className="flex flex-col bg-white border border-red-100 rounded-3xl p-6 mt-4">
+        <section className="flex flex-col bg-white border border-red-100 rounded-3xl p-6 ">
           <div className="flex items-center gap-4 mb-2">
             <div className="bg-red-50 p-2.5 rounded-xl text-red-500">
               <ShieldAlert size={20} />
