@@ -17,7 +17,7 @@ export default function CollectionsHeader({ searchQuery, setSearchQuery }: Colle
             Manage and organize your curated digital resources.
           </p>
         </div>
-        <button className="flex items-center justify-center gap-2 bg-[#171a24] text-white py-3 px-5 rounded-xl font-mono text-xs md:text-sm font-bold active:scale-95 transition-all w-fit whitespace-nowrap">
+        <button className="flex items-center justify-center gap-2 bg-[#171a24] text-white py-3 px-5 rounded-xl font-mono text-xs md:text-sm font-bold active:scale-95 transition-all w-full md:w-fit whitespace-nowrap">
           <Plus size={16} />
           Create New Collection
         </button>
