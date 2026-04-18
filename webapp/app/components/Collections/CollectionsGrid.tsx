@@ -13,10 +13,18 @@ const collections = [
   { title: "Photography", items: 56 },
 ];
 
-export default function CollectionsGrid() {
+interface CollectionsGridProps {
+  searchQuery?: string;
+}
+
+export default function CollectionsGrid({ searchQuery = "" }: CollectionsGridProps) {
+  const filteredCollections = collections.filter((c) =>
+    c.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-      {collections.map((col, index) => (
+      {filteredCollections.map((col, index) => (
         <div
           key={index}
           className="flex flex-col items-center justify-start bg-[#f1f1f2] rounded-3xl pt-8 pb-6 px-4 hover:bg-[#e8e8e9] transition-all cursor-pointer group border border-transparent hover:border-gray-200"
