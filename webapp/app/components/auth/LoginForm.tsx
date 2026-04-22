@@ -174,8 +174,8 @@ export function LoginForm() {
             <label className="flex items-center gap-2 cursor-pointer">
               <Checkbox
                 checked={values.rememberMe}
-                onCheckedChange={(checked) =>
-                  handleChange("rememberMe", checked as boolean)
+                onChange={(event: any) =>
+                  handleChange("rememberMe", event.target.checked)
                 }
                 aria-label="Remember me"
                 className="border-[#bfc2d3] data-[state=checked]:bg-[#0a79ff] data-[state=checked]:border-[#0a79ff]"
