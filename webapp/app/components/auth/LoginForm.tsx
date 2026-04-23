@@ -90,12 +90,12 @@ export function LoginForm() {
   }
 
   return (
-    <Card className="w-full max-w-md px-6 py-7 md:px-8 md:py-9 shadow-lg border-[#bfc2d3]/50 rounded-2xl bg-white">
+    <Card className="w-full max-w-md px-6 py-7 md:px-8 md:py-9 shadow-lg border-gray-200 rounded-3xl bg-white">
       <CardHeader className="space-y-3">
-        <CardTitle className="text-center text-3xl md:text-4xl text-[#242c51] font-bold">
+        <CardTitle className="text-center text-3xl md:text-4xl text-gray-900 font-serif font-semibold">
           Log in to Save It
         </CardTitle>
-        <CardDescription className="text-center text-base text-[#515981]">
+        <CardDescription className="text-center text-base font-mono text-gray-500">
           Access all of your saved resources in one clean dashboard.
         </CardDescription>
       </CardHeader>
@@ -110,9 +110,9 @@ export function LoginForm() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-[#242c51] font-medium">Email</Label>
+            <Label htmlFor="email" className="font-mono text-gray-900 font-medium">Email</Label>
             <div className="relative">
-              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-[#515981]">
+              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-gray-400">
                 <Mail className="h-4 w-4" aria-hidden="true" />
               </span>
               <Input
@@ -122,7 +122,7 @@ export function LoginForm() {
                 inputMode="email"
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "email-error" : undefined}
-                className="pl-9 border-[#bfc2d3] focus-visible:ring-[#0a79ff] text-[#242c51]"
+                className="pl-9 font-mono border-gray-200 focus-visible:ring-[#0a79ff] text-gray-900"
                 placeholder="you@example.com"
                 value={values.email}
                 onChange={(event) =>
@@ -133,7 +133,7 @@ export function LoginForm() {
             {errors.email && (
               <p
                 id="email-error"
-                className="text-xs font-medium text-destructive"
+                className="text-xs font-mono font-medium text-destructive"
               >
                 {errors.email}
               </p>
@@ -141,9 +141,9 @@ export function LoginForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password" className="text-[#242c51] font-medium">Password</Label>
+            <Label htmlFor="password" className="font-mono text-gray-900 font-medium">Password</Label>
             <div className="relative">
-              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-[#515981]">
+              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-gray-400">
                 <Lock className="h-4 w-4" aria-hidden="true" />
               </span>
               <Input
@@ -152,7 +152,7 @@ export function LoginForm() {
                 autoComplete="current-password"
                 aria-invalid={!!errors.password}
                 aria-describedby={errors.password ? "password-error" : undefined}
-                className="pl-9 border-[#bfc2d3] focus-visible:ring-[#0a79ff] text-[#242c51]"
+                className="pl-9 font-mono border-gray-200 focus-visible:ring-[#0a79ff] text-gray-900"
                 placeholder="••••••••"
                 value={values.password}
                 onChange={(event) =>
@@ -163,7 +163,7 @@ export function LoginForm() {
             {errors.password && (
               <p
                 id="password-error"
-                className="text-xs font-medium text-destructive"
+                className="text-xs font-mono font-medium text-destructive"
               >
                 {errors.password}
               </p>
@@ -178,16 +178,16 @@ export function LoginForm() {
                   handleChange("rememberMe", event.target.checked)
                 }
                 aria-label="Remember me"
-                className="border-[#bfc2d3] data-[state=checked]:bg-[#0a79ff] data-[state=checked]:border-[#0a79ff]"
+                className="border-gray-200 data-[state=checked]:bg-[#0a79ff] data-[state=checked]:border-[#0a79ff]"
               />
-              <span className="text-sm text-[#515981]">
+              <span className="text-sm font-mono text-gray-500">
                 Remember me
               </span>
             </label>
 
             <button
               type="button"
-              className="text-sm font-medium text-[#0a79ff] hover:text-[#0861cc] underline-offset-4 hover:underline transition-colors"
+              className="text-sm font-mono font-medium text-[#0a79ff] hover:text-[#0861cc] underline-offset-4 hover:underline transition-colors"
             >
               Forgot password?
             </button>
@@ -195,7 +195,7 @@ export function LoginForm() {
 
           <Button
             type="submit"
-            className="mt-1 w-full bg-[#0a79ff] hover:bg-[#0861cc] text-white rounded-lg py-6 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+            className="mt-1 font-mono w-full bg-[#0a79ff] hover:bg-[#0861cc] text-white rounded-xl py-6 text-base font-semibold shadow-md hover:shadow-lg transition-all"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Logging you in..." : "Log in"}
@@ -204,10 +204,10 @@ export function LoginForm() {
 
         <div className="relative py-2">
           <div className="absolute inset-0 flex items-center">
-            <Separator className="bg-[#bfc2d3]/50" />
+            <Separator className="bg-gray-200" />
           </div>
           <div className="relative flex justify-center">
-            <span className="bg-white px-3 text-xs font-bold uppercase tracking-widest text-[#515981]">
+            <span className="bg-white px-3 text-xs font-mono font-bold uppercase tracking-widest text-gray-500">
               or continue with
             </span>
           </div>
@@ -217,7 +217,7 @@ export function LoginForm() {
           <Button
             type="button"
             variant="outline"
-            className="w-full justify-center gap-2 border-[#bfc2d3] hover:bg-[#f0efff] hover:text-[#242c51] text-[#242c51]"
+            className="w-full font-mono justify-center gap-2 border-gray-200 hover:bg-[#f0efff] hover:text-gray-900 text-gray-900"
           >
             <Chrome className="h-4 w-4" aria-hidden="true" />
             <span className="text-sm font-semibold">Google</span>
@@ -225,7 +225,7 @@ export function LoginForm() {
           <Button
             type="button"
             variant="outline"
-            className="w-full justify-center gap-2 border-[#bfc2d3] hover:bg-[#f0efff] hover:text-[#242c51] text-[#242c51]"
+            className="w-full font-mono justify-center gap-2 border-gray-200 hover:bg-[#f0efff] hover:text-gray-900 text-gray-900"
           >
             <Github className="h-4 w-4" aria-hidden="true" />
             <span className="text-sm font-semibold">GitHub</span>
@@ -233,7 +233,7 @@ export function LoginForm() {
         </div>
       </CardContent>
 
-      <CardFooter className="flex-col gap-2 text-center text-sm text-[#515981] mt-2">
+      <CardFooter className="flex-col gap-2 font-mono text-center text-sm text-gray-500 mt-2">
         <p>
           Don&apos;t have an account?{" "}
           <a
