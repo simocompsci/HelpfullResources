@@ -10,7 +10,7 @@ const MonaSans = Mona_Sans({
 
 const Footer = () => {
   return (
-    <footer className="w-full px-6 sm:px-10 md:px-20 py-10 text-black">
+    <footer className="w-full px-6 sm:px-10 md:px-20 py-10 text-[#242c51]">
       {/* Top row: email and phone */}
       <div
         className={`${MonaSans.className} flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-8 text-3xl sm:text-4xl md:text-6xl font-bold text-center`}
