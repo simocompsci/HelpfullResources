@@ -9,7 +9,7 @@ import ContactUs from "./components/Landing/ContactUs";
 
 export default function Page() {
     return (
-        <>
+        <main className="flex flex-col min-h-screen bg-[#f7f5ff] text-[#242c51] font-body">
             <Navbar/>
             <Hero/>
             <About/>
@@ -18,6 +18,6 @@ export default function Page() {
             <FAQ/>
             <ContactUs/>
             <Footer/>
-        </>
+        </main>
     );
 }
