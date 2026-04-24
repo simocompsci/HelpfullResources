@@ -27,10 +27,10 @@ export default function About() {
             <section className="flex flex-col md:flex-row justify-between items-start mt-20 gap-12 mx-10 md:mx-30">
                 {/* LEFT COLUMN */}
                 <div className="md:w-2/5">
-                    <h1 className={`${BungeeShade.className} text-5xl md:text-7xl font-serif mb-6 leading-tight text-[#242c51]`}>
+                    <h1 className={`${BungeeShade.className} text-5xl md:text-7xl font-serif mb-6 leading-tight`}>
                         About Us
                     </h1>
-                    <p className="text-lg md:text-xl text-[#515981] leading-relaxed">
+                    <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
                         Our application is designed for people who save a lot of useful resources
                         they find online but often forget where they stored them, making it
                         difficult to use those resources later.
@@ -39,7 +39,7 @@ export default function About() {
 
                 {/* RIGHT COLUMN */}
                 <div className="md:w-3/5">
-                    <p className="text-lg md:text-xl text-[#515981] leading-relaxed">
+                    <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
                         I created this app after realizing that my friends and I all faced the
                         same problem: we constantly save social media videos, links, books,
                         YouTube tutorials, and other resources we think will be useful, but we

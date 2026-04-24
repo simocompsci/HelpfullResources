@@ -24,7 +24,7 @@ const DmSans = DM_Sans({
 const ContactUs = () => {
   return (
     <section className="flex flex-col items-center justify-center py-20 px-4">
-      <h1 className={`${BungeeShade.className} text-4xl md:text-7xl text-[#242c51] text-center font-bold leading-tight max-w-xl md:max-w-4xl mx-auto`}>
+      <h1 className={`${BungeeShade.className} text-4xl md:text-7xl text-black text-center font-bold leading-tight max-w-xl md:max-w-4xl mx-auto`}>
         Contact Us
       </h1>
 
@@ -34,12 +34,12 @@ const ContactUs = () => {
           <Input
             type="text"
             placeholder="Your Name"
-            className="bg-white border border-gray-300 p-4 w-full text-[#242c51] placeholder-[#515981] rounded-xl outline-none focus:ring-2 focus:ring-[#bfc2d3]"
+            className="bg-gray-200 p-4 w-full"
           />
           <Input
             type="email"
             placeholder="Your Email"
-            className="bg-white border border-gray-300 p-4 w-full text-[#242c51] placeholder-[#515981] rounded-xl outline-none focus:ring-2 focus:ring-[#bfc2d3]"
+            className="bg-gray-200 p-4 w-full "
           />
         </div>
 
@@ -54,13 +54,13 @@ const ContactUs = () => {
         <Textarea
           placeholder="Your Message"
           rows="6"
-          className="bg-white border border-gray-300 rounded-xl p-4 w-full outline-none focus:ring-2 focus:ring-[#bfc2d3] placeholder-[#515981] text-[#242c51]"
+          className="bg-gray-200 rounded-xl p-4 w-full outline-none focus:ring-2 focus:ring-gray-500 placeholder-gray-500"
         ></Textarea>
 
         {/* Submit button */}
         <button
           type="submit"
-          className="bg-[#0a79ff] text-white font-semibold px-6 py-2 rounded-xl hover:bg-blue-600 transition-all"
+          className="bg-black text-white font-semibold px-6 py-2 rounded-xl hover:bg-gray-800 transition-all"
         >
           Submit
         </button>

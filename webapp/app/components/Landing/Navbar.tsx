@@ -27,11 +27,10 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled
-            ? "backdrop-blur-xl bg-white/50 border-b border-[#bfc2d3]/30"
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+            ? "backdrop-blur-xl bg-white/20 border-b border-white/30"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="flex justify-between items-center mx-4 md:mx-20 py-4">
           {/* Logo */}
@@ -42,7 +41,7 @@ const Navbar = () => {
           </h1>
 
           {/* Desktop Nav Links */}
-          <ul className="hidden md:flex gap-6 text-lg font-medium font-sans text-[#242c51]">
+          <ul className="hidden md:flex gap-6 text-lg font-medium font-sans text-black">
             <li className="cursor-pointer hover:opacity-70 transition">
               About
             </li>
@@ -59,10 +58,10 @@ const Navbar = () => {
 
           {/* Right Section */}
           <div className="flex items-center gap-3 font-sans">
-            <button className="px-5 bg-gray-200 text-[#242c51] hover:bg-[#e0e0e0] h-10 md:h-12 rounded-full font-semibold text-sm md:text-base transition">
+            <button className="px-5 bg-white text-gray-900 h-10 md:h-12 rounded-full font-semibold text-sm md:text-base">
               Login
             </button>
-            <button className="px-5 bg-[#0a79ff] text-white hover:bg-blue-600 h-10 md:h-12 rounded-full font-semibold text-sm md:text-base transition">
+            <button className="px-5 bg-black text-white h-10 md:h-12 rounded-full font-semibold text-sm md:text-base">
               Register
             </button>
 
@@ -78,7 +77,7 @@ const Navbar = () => {
 
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="md:hidden mx-6 mb-4 rounded-3xl backdrop-blur-xl bg-white/90 text-[#242c51] shadow-lg border border-gray-200">
+          <div className="md:hidden mx-6 mb-4 rounded-3xl backdrop-blur-xl bg-black/80 text-white border border-white/10">
             <ul className="flex flex-col items-center gap-4 p-6 text-lg font-medium">
               <li className="cursor-pointer">About</li>
               <li className="cursor-pointer">Features</li>

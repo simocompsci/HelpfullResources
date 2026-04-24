@@ -29,7 +29,7 @@ export default function FAQ() {
     return (
         <div className="mt-20 px-4">
             <h1
-                className={`${BungeeShade.className} text-4xl md:text-7xl text-[#242c51] text-center font-bold leading-tight max-w-xl md:max-w-4xl mx-auto`}
+                className={`${BungeeShade.className} text-4xl md:text-7xl text-black text-center font-bold leading-tight max-w-xl md:max-w-4xl mx-auto`}
             >
                 FAQ
             </h1>
@@ -46,7 +46,7 @@ export default function FAQ() {
                             Product Information
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance px-2">
-                            <p className="text-base md:text-xl leading-relaxed text-[#515981] text-start">
+                            <p className="text-base md:text-xl leading-relaxed text-black text-start">
                                 Our flagship product combines cutting-edge technology with sleek
                                 design. Built with premium materials, it offers unparalleled
                                 performance and reliability.
@@ -59,7 +59,7 @@ export default function FAQ() {
                             Shipping Details
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance px-2">
-                            <p className="text-base md:text-xl leading-relaxed text-[#515981] text-start">
+                            <p className="text-base md:text-xl leading-relaxed text-black text-start">
                                 We offer worldwide shipping through trusted courier partners.
                                 Standard delivery takes 3-5 business days, while express shipping
                                 ensures delivery within 1-2 business days.
@@ -72,7 +72,7 @@ export default function FAQ() {
                             Return Policy
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance px-2">
-                            <p className="text-base md:text-xl leading-relaxed text-[#515981] text-start">
+                            <p className="text-base md:text-xl leading-relaxed text-black text-start">
                                 We stand behind our products with a comprehensive 30-day return
                                 policy. If you&apos;re not completely satisfied, simply return the
                                 item in its original condition.
