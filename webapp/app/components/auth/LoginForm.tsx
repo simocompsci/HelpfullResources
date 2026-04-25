@@ -90,7 +90,7 @@ export function LoginForm() {
   }
 
   return (
-    <Card className="w-full max-w-md px-6 py-7 md:px-8 md:py-9 shadow-lg border-gray-200 rounded-3xl bg-white">
+    <Card className="w-full max-w-md px-6 py-7 md:px-8 md:py-9  border-gray-200 rounded-3xl bg-white">
       <CardHeader className="space-y-3">
         <CardTitle className="text-center text-3xl md:text-4xl text-gray-900 font-serif font-semibold">
           Log in to Save It

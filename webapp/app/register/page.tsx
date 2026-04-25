@@ -6,7 +6,6 @@ export default function RegisterPage() {
     <main className="min-h-screen flex items-center justify-center bg-[#f7f5ff] px-4 py-10">
       <div className="w-full max-w-5xl">
         <div className="mb-10 flex flex-col items-center text-center">
-          <Image src="/logo.png" alt="Logo" width={64} height={64} className="mb-6 object-contain" priority />
           <p className="text-xs font-mono font-bold uppercase tracking-[0.22em] text-gray-500">
             Get Started
           </p>
