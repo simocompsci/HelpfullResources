@@ -1,11 +1,11 @@
 "use client";
 
-import { Home, FolderHeart, Search, Settings, User, LogOut } from "lucide-react";
+import { Home, Folder, Search, Settings, User, LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
@@ -58,18 +58,15 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </div>
         </nav>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={pathname}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="flex-grow"
-          >
-            {children}
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="flex-grow"
+        >
+          {children}
+        </motion.div>
       </main>
 
       {/* Floating Bottom Navigation */}
@@ -81,7 +78,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         </Link>
 
         <Link href="/collections" className={`flex-1 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all sm:w-24 md:w-28 py-2 rounded-full ${pathname === '/collections' ? 'bg-[#f0efff] text-[#242c51]' : 'text-[#515981] hover:text-[#0a79ff]'}`}>
-          <FolderHeart size={20} className={pathname === '/collections' ? "fill-[#242c51]" : ""} />
+          <Folder size={20} className={pathname === '/collections' ? "fill-[#242c51]" : ""} />
           <span className="font-mono font-bold text-[9px] sm:text-[10px] tracking-widest uppercase">Collections</span>
         </Link>
 
