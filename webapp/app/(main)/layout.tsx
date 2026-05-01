@@ -2,16 +2,32 @@
 
 import { Home, FolderHeart, Search, Settings, User, LogOut } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Global Cmd+K shortcut to open AI Search
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        router.push("/ai");
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, [router]);
 
   return (
     <div className="flex flex-col min-h-screen pb-28 sm:pb-24 font-body bg-[#f7f5ff]">
-      <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 mb-16 flex-grow">
+      <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 mb-16 flex-grow flex flex-col">
         {/* Navigation / Header */}
         <nav className="flex justify-between mb-10 items-center relative z-40">
             <Image src="/logo.png" alt="Logo" width={52} height={52} className="w-12 h-12 object-contain" priority />
@@ -42,11 +58,22 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </div>
         </nav>
 
-        {children}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={pathname}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="flex-grow"
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {/* Floating Bottom Navigation */}
-      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto bg-white border border-gray-300 rounded-full p-2 flex items-center justify-between gap-1 sm:gap-2 z-50 text-center">
+      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto bg-white border border-gray-300 rounded-full p-2 flex items-center justify-between gap-1 sm:gap-2 z-50 text-center shadow-lg">
 
         <Link href="/home" className={`flex-1 flex flex-col items-center justify-center gap-1 active:scale-95 transition-all sm:w-24 md:w-28 py-2 rounded-full ${pathname === '/home' ? 'bg-[#f0efff] text-[#242c51]' : 'text-[#515981] hover:text-[#0a79ff]'}`}>
           <Home size={20} className={pathname === '/home' ? "fill-[#242c51]" : ""} />

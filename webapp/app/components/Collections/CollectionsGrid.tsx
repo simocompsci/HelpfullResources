@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { FolderHeart } from "lucide-react";
+
 const collections = [
   { title: "Design Inspiration", items: 128 },
   { title: "Research Papers", items: 42 },
@@ -22,11 +25,48 @@ export default function CollectionsGrid({ searchQuery = "" }: CollectionsGridPro
     c.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  if (filteredCollections.length === 0) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }} 
+        animate={{ opacity: 1, scale: 1 }} 
+        className="flex flex-col items-center justify-center py-20 px-4 text-center mt-8 border-2 border-dashed border-gray-200 rounded-3xl bg-white"
+      >
+        <div className="bg-[#f0efff] p-6 rounded-full mb-6">
+          <FolderHeart size={48} className="text-[#242c51] opacity-70" />
+        </div>
+        <h3 className="text-xl font-semibold text-[#242c51] mb-3 font-body">No collections found</h3>
+        <p className="text-[#515981] max-w-sm mb-6 text-sm font-medium">
+          We couldn't find any collections matching "{searchQuery}". Try a different search term or create a new one.
+        </p>
+      </motion.div>
+    );
+  }
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05 }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 15 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+    <motion.div 
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8"
+    >
       {filteredCollections.map((col, index) => (
-        <div
+        <motion.div
           key={index}
+          variants={item}
           className="flex flex-col items-center justify-start bg-[#f1f1f2] rounded-3xl pt-8 pb-6 px-4 hover:bg-[#e8e8e9] transition-all cursor-pointer group border border-transparent hover:border-gray-200"
         >
           {/* Folder SVG wrapper */}
@@ -66,8 +106,8 @@ export default function CollectionsGrid({ searchQuery = "" }: CollectionsGridPro
           <p className="text-xs md:text-sm text-gray-500 font-medium tracking-wide">
             {col.items} Files
           </p>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
