@@ -30,7 +30,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 mb-16 flex-grow flex flex-col">
         {/* Navigation / Header */}
         <nav className="flex justify-between mb-10 items-center relative z-40">
-            <Image src="/logo.png" alt="Logo" width={52} height={52} className="w-12 h-12 object-contain" priority />
+            <Image src="/logo.png" alt="Logo" width={52} height={52} className="w-14 h-14 object-cover rounded-full border border-gray-200" priority />
             
             <div className="relative group">
               <Link href="/settings" className="block bg-gray-200 p-3 rounded-full text-[#242c51] active:scale-95 transition-all outline-none border border-transparent hover:border-[#bfc2d3]">
