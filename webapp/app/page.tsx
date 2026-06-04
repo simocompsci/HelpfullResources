@@ -10,9 +10,12 @@
 export default function Page() {
     return (
         <>
-            <nav>
+        <div className="w-5xl bg-gray-200 flex justify-center mx-auto mt-50 border border-black">
+            <div className="flex text-9xl font-mono font-bold p-10">
                 This is the landing Page
-            </nav>
+            </div>
+        </div>
+            
         </>
     );
 }
