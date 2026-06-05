@@ -11,7 +11,7 @@ export default function Page() {
     return (
         <>
         <div className="w-4xl bg-gray-200 flex justify-center mx-auto mt-50 border border-black">
-            <div className="flex text-9xl font-bold font-serif p-10">
+            <div className="flex text-9xl text-center font-bold font-serif p-10">
                 This is the landing Page
             </div>
         </div>
