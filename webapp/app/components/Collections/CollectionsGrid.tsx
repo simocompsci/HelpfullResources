@@ -37,7 +37,8 @@ export default function CollectionsGrid({ searchQuery = "" }: CollectionsGridPro
         </div>
         <h3 className="text-xl font-semibold text-[#242c51] mb-3 font-body">No collections found</h3>
         <p className="text-[#515981] max-w-sm mb-6 text-sm font-medium">
-          We couldn't find any collections matching "{searchQuery}". Try a different search term or create a new one.
+          We couldnt find any collections matching `{searchQuery}`. Try a different search term or create a new one.
+
         </p>
       </motion.div>
     );
