@@ -41,10 +41,6 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
               <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
                 <div className="p-1.5 flex flex-col gap-0.5">
                   <Link href="/settings" className="flex items-center gap-3 px-3 py-2.5 text-sm text-[#515981] hover:text-[#242c51] hover:bg-[#f0efff] rounded-xl transition-all font-medium">
-                    <User size={18} />
-                    Profile
-                  </Link>
-                  <Link href="/settings" className="flex items-center gap-3 px-3 py-2.5 text-sm text-[#515981] hover:text-[#242c51] hover:bg-[#f0efff] rounded-xl transition-all font-medium">
                     <Settings size={18} />
                     Settings
                   </Link>
