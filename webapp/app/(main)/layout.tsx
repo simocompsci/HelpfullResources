@@ -1,10 +1,10 @@
 "use client";
 
-import { Home, Folder, Search, Settings, User, LogOut } from "lucide-react";
+import { Home, Folder, Search, Settings, User, LogOut, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const navItems = [
@@ -17,6 +17,7 @@ const navItems = [
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -31,26 +32,32 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="flex min-h-screen font-body bg-[#f7f5ff]">
-      <nav className="fixed left-0 top-0 h-full w-16 md:w-60 bg-white border-r border-gray-200 z-50 flex flex-col items-center md:items-stretch">
-        <div className="flex justify-center md:justify-start p-3 md:p-4">
+      <nav className={`fixed left-0 top-0 h-full w-16 ${sidebarOpen ? 'md:w-60' : 'md:w-16'} bg-white border-r border-gray-200 z-50 flex flex-col items-center ${sidebarOpen ? 'md:items-stretch' : ''} transition-all duration-300`}>
+        <div className={`flex items-center p-3 md:p-4 ${sidebarOpen ? 'md:justify-between' : 'justify-center md:flex-col md:gap-2'}`}>
           <Image
             src="/logo.png"
             alt="Logo"
             width={44}
             height={44}
-            className="w-11 h-11 md:w-12 md:h-12 object-cover rounded-full border border-gray-200"
+            className="w-11 h-11 md:w-12 md:h-12 object-cover rounded-full border border-gray-200 shrink-0"
             priority
           />
+          <button
+            onClick={() => setSidebarOpen(prev => !prev)}
+            className="hidden md:flex items-center justify-center w-8 h-8 rounded-lg hover:bg-[#f0efff] text-[#515981] hover:text-[#242c51] transition-all active:scale-95"
+          >
+            {sidebarOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
+          </button>
         </div>
 
-        <div className="flex-1 flex flex-col items-center md:items-stretch gap-1 p-2 md:p-3">
+        <div className={`flex-1 flex flex-col items-center ${sidebarOpen ? 'md:items-stretch' : ''} gap-1 p-2 md:p-3`}>
           {navItems.map(({ href, label, icon: Icon }) => {
             const isActive = pathname === href;
             return (
               <Link
                 key={href}
                 href={href}
-                className={`flex items-center justify-center md:justify-start gap-3 p-2 md:px-3 md:py-2.5 rounded-xl active:scale-95 transition-all ${
+                className={`flex items-center justify-center ${sidebarOpen ? 'md:justify-start' : ''} gap-3 p-2 md:px-3 md:py-2.5 rounded-xl active:scale-95 transition-all ${
                   isActive
                     ? "bg-[#f0efff] text-[#242c51]"
                     : "text-[#515981] hover:text-[#0a79ff]"
@@ -64,7 +71,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                       : ""
                   }
                 />
-                <span className="hidden md:inline font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase">
+                <span className={`hidden ${sidebarOpen ? 'md:inline' : 'md:hidden'} font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase`}>
                   {label}
                 </span>
               </Link>
@@ -75,10 +82,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <div className="relative group p-2 md:p-3">
           <Link
             href="/settings"
-            className="flex items-center justify-center md:justify-start gap-3 p-2 md:px-3 md:py-2.5 rounded-xl bg-gray-200 text-[#242c51] active:scale-95 transition-all"
+            className={`flex items-center justify-center ${sidebarOpen ? 'md:justify-start' : ''} gap-3 p-2 md:px-3 md:py-2.5 rounded-xl bg-gray-200 text-[#242c51] active:scale-95 transition-all`}
           >
             <User size={20} />
-            <span className="hidden md:inline font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase">Profile</span>
+            <span className={`hidden ${sidebarOpen ? 'md:inline' : 'md:hidden'} font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase`}>Profile</span>
           </Link>
 
           <div className="absolute left-0 bottom-full mb-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-2 group-hover:translate-y-0 overflow-hidden">
@@ -100,7 +107,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         </div>
       </nav>
 
-      <main className="flex-1 ml-16 md:ml-60 min-h-screen">
+      <main className={`flex-1 ml-16 ${sidebarOpen ? 'md:ml-60' : 'md:ml-16'} min-h-screen transition-all duration-300`}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
           <motion.div
             key={pathname}
