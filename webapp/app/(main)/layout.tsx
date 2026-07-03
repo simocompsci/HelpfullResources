@@ -37,40 +37,60 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="flex min-h-screen font-body bg-[#f7f5ff]">
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
-          onClick={() => setMobileMenuOpen(false)}
+      {/* Mobile top bar */}
+      <div className="fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 z-50 flex items-center justify-between px-4 md:hidden">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={36}
+          height={36}
+          className="w-9 h-9 object-cover rounded-full border border-gray-200"
+          priority
         />
+        <button
+          onClick={() => setMobileMenuOpen(prev => !prev)}
+          className="flex items-center justify-center w-9 h-9 rounded-lg hover:bg-[#f0efff] text-[#515981] hover:text-[#242c51] transition-all active:scale-95"
+        >
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile menu overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-16 z-40 bg-[#f7f5ff] flex flex-col items-center justify-center gap-3 p-6 md:hidden">
+          {navItems.map(({ href, label, icon: Icon }) => {
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-4 px-8 py-4 rounded-2xl w-full max-w-xs justify-center transition-all active:scale-95 ${
+                  isActive
+                    ? "bg-[#f0efff] text-[#242c51]"
+                    : "text-[#515981] hover:text-[#0a79ff] hover:bg-[#f0efff]/50"
+                }`}
+              >
+                <Icon
+                  size={22}
+                  className={
+                    isActive && (href === "/home" || href === "/collections")
+                      ? "fill-[#242c51]"
+                      : ""
+                  }
+                />
+                <span className="font-mono font-bold text-sm tracking-widest uppercase">
+                  {label}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
       )}
 
-      <button
-        onClick={() => setMobileMenuOpen(true)}
-        className="fixed top-4 left-4 z-30 md:hidden flex items-center justify-center w-10 h-10 bg-white rounded-xl shadow-lg border border-gray-200 text-[#242c51] hover:bg-[#f0efff] transition-all active:scale-95"
-      >
-        <Menu size={20} />
-      </button>
-
-      <nav className={`
-        fixed left-0 top-0 h-full z-50
-        bg-white border-r border-gray-200
-        flex flex-col
-        transition-all duration-300
-
-        ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
-        w-64
-
-        md:translate-x-0
-        md:w-16
-        ${sidebarOpen ? 'md:w-60' : ''}
-        items-center
-        ${sidebarOpen ? 'md:items-stretch' : ''}
-      `}>
-        <div className={`
-          flex items-center p-3 md:p-4 gap-2
-          ${mobileMenuOpen ? 'justify-between' : 'justify-center'}
-          ${sidebarOpen ? 'md:justify-between' : 'md:flex-col md:gap-2'}
-        `}>
+      {/* Desktop sidebar */}
+      <nav className={`hidden md:flex fixed left-0 top-0 h-full z-50 bg-white border-r border-gray-200 flex-col transition-all duration-300 md:w-16 ${sidebarOpen ? 'md:w-60' : ''} items-center ${sidebarOpen ? 'md:items-stretch' : ''}`}>
+        <div className={`flex items-center p-3 md:p-4 gap-2 justify-center ${sidebarOpen ? 'md:justify-between' : 'md:flex-col md:gap-2'}`}>
           <Image
             src="/logo.png"
             alt="Logo"
@@ -79,14 +99,6 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             className="w-11 h-11 md:w-12 md:h-12 object-cover rounded-full border border-gray-200 shrink-0"
             priority
           />
-
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="md:hidden flex items-center justify-center w-8 h-8 rounded-lg hover:bg-[#f0efff] text-[#515981] hover:text-[#242c51] transition-all active:scale-95"
-          >
-            <X size={18} />
-          </button>
-
           <button
             onClick={() => setSidebarOpen(prev => !prev)}
             className="hidden md:flex items-center justify-center w-8 h-8 rounded-lg hover:bg-[#f0efff] text-[#515981] hover:text-[#242c51] transition-all active:scale-95"
@@ -95,24 +107,18 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </button>
         </div>
 
-        <div className={`
-          flex-1 flex flex-col gap-1 p-2 md:p-3
-          ${mobileMenuOpen ? 'items-stretch' : 'items-center'}
-          ${sidebarOpen ? 'md:items-stretch' : ''}
-        `}>
+        <div className={`flex-1 flex flex-col items-center ${sidebarOpen ? 'md:items-stretch' : ''} gap-1 p-2 md:p-3`}>
           {navItems.map(({ href, label, icon: Icon }) => {
             const isActive = pathname === href;
             return (
               <Link
                 key={href}
                 href={href}
-                className={`
-                  flex items-center gap-3 p-2 md:px-3 md:py-2.5 rounded-xl
-                  active:scale-95 transition-all
-                  ${mobileMenuOpen ? 'justify-start' : 'justify-center'}
-                  ${sidebarOpen ? 'md:justify-start' : ''}
-                  ${isActive ? "bg-[#f0efff] text-[#242c51]" : "text-[#515981] hover:text-[#0a79ff]"}
-                `}
+                className={`flex items-center justify-center ${sidebarOpen ? 'md:justify-start' : ''} gap-3 p-2 md:px-3 md:py-2.5 rounded-xl active:scale-95 transition-all ${
+                  isActive
+                    ? "bg-[#f0efff] text-[#242c51]"
+                    : "text-[#515981] hover:text-[#0a79ff]"
+                }`}
               >
                 <Icon
                   size={20}
@@ -122,11 +128,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                       : ""
                   }
                 />
-                <span className={`
-                  font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase
-                  ${mobileMenuOpen ? 'inline' : 'hidden'}
-                  ${sidebarOpen ? 'md:inline' : 'md:hidden'}
-                `}>
+                <span className={`hidden ${sidebarOpen ? 'md:inline' : 'md:hidden'} font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase`}>
                   {label}
                 </span>
               </Link>
@@ -137,19 +139,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <div className="relative group p-2 md:p-3">
           <Link
             href="/settings"
-            className={`
-              flex items-center gap-3 p-2 md:px-3 md:py-2.5 rounded-xl
-              bg-gray-200 text-[#242c51] active:scale-95 transition-all
-              ${mobileMenuOpen ? 'justify-start' : 'justify-center'}
-              ${sidebarOpen ? 'md:justify-start' : ''}
-            `}
+            className={`flex items-center justify-center ${sidebarOpen ? 'md:justify-start' : ''} gap-3 p-2 md:px-3 md:py-2.5 rounded-xl bg-gray-200 text-[#242c51] active:scale-95 transition-all`}
           >
             <User size={20} />
-            <span className={`
-              font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase
-              ${mobileMenuOpen ? 'inline' : 'hidden'}
-              ${sidebarOpen ? 'md:inline' : 'md:hidden'}
-            `}>Profile</span>
+            <span className={`hidden ${sidebarOpen ? 'md:inline' : 'md:hidden'} font-mono font-bold text-[10px] sm:text-[11px] tracking-widest uppercase`}>Profile</span>
           </Link>
 
           <div className="absolute left-0 bottom-full mb-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-2 group-hover:translate-y-0 overflow-hidden">
@@ -174,6 +167,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       <main className={`
         flex-1 min-h-screen
         transition-all duration-300
+        pt-16 md:pt-0
         ml-0
         md:ml-16
         ${sidebarOpen ? 'md:ml-60' : ''}
