@@ -12,7 +12,7 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full border-b border-gray-200">
+    <nav className="relative w-full border-b border-gray-200">
       <div className="mx-auto w-full max-w-6xl border-x border-gray-200 px-6">
         {/* Top Bar */}
         <div className="flex h-16 items-center justify-between font-medium">
@@ -20,7 +20,7 @@ export default function NavBar() {
           <div className="cursor-pointer text-lg">Logo</div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 text-md">
+          <div className="hidden md:flex items-center gap-8 text-base">
             <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
               About Us
             </a>
@@ -50,7 +50,7 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="border-t border-gray-200 py-4 md:hidden">
+          <div className="absolute left-0 right-0 top-full z-50 border-t border-gray-200 bg-white px-6 py-4 md:hidden">
             <div className="flex flex-col gap-2">
               <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
                 About Us
