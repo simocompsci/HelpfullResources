@@ -1,26 +1,76 @@
 "use client";
+
+import { useState } from "react";
 import { Inter } from "next/font/google";
+import { Menu, X } from "lucide-react";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
 export default function NavBar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="w-full border-b border-gray-200">
-      <div className="mx-auto w-full max-w-7xl border-x border-gray-200 px-6">
-        <div className="flex h-20 items-center justify-between font-inter font-medium">
-          <div>Logo</div>
+      <div className="mx-auto w-full max-w-6xl border-x border-gray-200 px-6">
+        {/* Top Bar */}
+        <div className="flex h-16 items-center justify-between font-medium">
+          {/* Logo */}
+          <div className="cursor-pointer text-lg">Logo</div>
 
-          <div className="flex gap-10">
-            <a href="#">About Us</a>
-            <a href="#">Features</a>
-            <a href="#">Platforms</a>
-            <a href="#">Contact Us</a>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8 text-md">
+            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+              About Us
+            </a>
+            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+              Features
+            </a>
+            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+              Platforms
+            </a>
+            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+              Contact Us
+            </a>
           </div>
 
-          <div>Sign In</div>
+          {/* Desktop Button */}
+          <div className="hidden md:block">
+            <button className="rounded-sm bg-black px-4 py-2 text-white hover:bg-gray-900">
+              Sign In
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden" onClick={() => setOpen(!open)}>
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {open && (
+          <div className="border-t border-gray-200 py-4 md:hidden">
+            <div className="flex flex-col gap-2">
+              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                About Us
+              </a>
+              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                Features
+              </a>
+              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                Platforms
+              </a>
+              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                Contact Us
+              </a>
+
+              <button className="mt-2 w-full rounded-sm bg-black px-4 py-2 text-white hover:bg-gray-900">
+                Sign In
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
