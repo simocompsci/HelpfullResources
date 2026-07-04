@@ -1,19 +1,27 @@
-"use client"
-import { Inter } from "next/font/google"
+"use client";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
-export default function NavBar(){
+export default function NavBar() {
   return (
-    <nav className="flex justify-center font-medium text-[2.5rem]/[2.75rem] tracking-[-0.8px] text-text-main lg:text-3xl lg:tracking-[-1px]">
-      <ul className={`flex justify-between gap-4 font-inter ${inter.className}`}>
-        <li>Products</li>
-        <li>Resources</li>
-        <li>Solutions</li>
-        <li>Pricing</li>
-      </ul>
+    <nav className="w-full border-b border-gray-200">
+      <div className="mx-auto w-full max-w-7xl border-x border-gray-200 px-6">
+        <div className="flex h-20 items-center justify-between font-inter font-medium">
+          <div>Logo</div>
+
+          <div className="flex gap-10">
+            <a href="#">About Us</a>
+            <a href="#">Features</a>
+            <a href="#">Platforms</a>
+            <a href="#">Contact Us</a>
+          </div>
+
+          <div>Sign In</div>
+        </div>
+      </div>
     </nav>
-  )
+  );
 }
