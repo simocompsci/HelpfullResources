@@ -1,18 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Inter } from "next/font/google";
 import { Menu, X } from "lucide-react";
 
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="relative w-full border-b border-gray-200">
+    <nav className="relative w-full border-b bg-[#fefdfb] border-gray-200">
       <div className="mx-auto w-full max-w-6xl px-6">
         {/* Top Bar */}
         <div className="flex h-16 items-center justify-between font-medium">
@@ -70,7 +66,7 @@ export default function NavBar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-x-0 top-16 bottom-0 z-40 bg-white md:hidden
+        className={`fixed inset-x-0 top-16 bottom-0 z-40 bg-[#fefdfb] md:hidden
           transition-all duration-300 ease-out
           ${
             open
