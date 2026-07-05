@@ -50,22 +50,24 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="absolute left-0 right-0 top-full z-50 border-t border-gray-200 bg-white px-6 py-4 md:hidden">
-            <div className="flex flex-col gap-2">
-              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
-                About Us
-              </a>
-              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
-                Features
-              </a>
-              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
-                Platforms
-              </a>
-              <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
-                Contact Us
-              </a>
+          <div className="fixed inset-x-0 top-16 bottom-0 z-40 bg-white md:hidden border border-t-gray-200">
+            <div className="flex h-full flex-col items-start px-3 pb-[env(safe-area-inset-bottom)] pt-4">
+              <div className="flex flex-col gap-2">
+                <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                  About Us
+                </a>
+                <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                  Features
+                </a>
+                <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                  Platforms
+                </a>
+                <a href="#" className="rounded-sm px-3 py-2 hover:bg-gray-100">
+                  Contact Us
+                </a>
+              </div>
 
-              <button className="mt-2 w-full rounded-sm bg-black px-4 py-2 text-white hover:bg-gray-900">
+              <button className="mt-auto w-full rounded-sm bg-black px-4 py-2 text-white hover:bg-gray-900">
                 Sign In
               </button>
             </div>
