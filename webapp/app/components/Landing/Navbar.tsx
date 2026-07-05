@@ -13,7 +13,7 @@ export default function NavBar() {
 
   return (
     <nav className="relative w-full border-b border-gray-200">
-      <div className="mx-auto w-full max-w-6xl border-x border-gray-200 px-6">
+      <div className="mx-auto w-full max-w-6xl px-6">
         {/* Top Bar */}
         <div className="flex h-16 items-center justify-between font-medium">
           {/* Logo */}
