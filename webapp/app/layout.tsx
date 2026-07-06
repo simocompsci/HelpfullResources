@@ -4,25 +4,26 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import localFont from "next/font/local";
 
-const recoleta = localFont({
+export const recoleta = localFont({
   src: [
     {
-      path: "../fonts/Recoleta-RegularDEMO.otf",
+      path: "../fonts/Recoleta-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/Recoleta-RegularDEMO.otf",
+      path: "../fonts/Recoleta-Medium.otf",
       weight: "500",
-      style: "medium",
+      style: "normal",
     },
     {
-      path: "../fonts/Recoleta-RegularDEMO.otf",
+      path: "../fonts/Recoleta-Bold.otf",
       weight: "700",
-      style: "bold",
+      style: "normal",
     },
   ],
   variable: "--font-recoleta",
+  display: "swap",
 });
 
 const inter = Inter({
@@ -46,7 +47,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfairDisplay.variable} ${recoleta.className}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfairDisplay.variable} ${recoleta.variable}`}
+    >
       <body className="font-sans">
         {children}
         <Toaster position="bottom-right" richColors />
