@@ -13,7 +13,7 @@ export default function NavBar() {
         {/* Top Bar */}
         <div className="flex h-16 items-center justify-between font-medium">
           {/* Logo */}
-          <div className="cursor-pointer text-lg">Logo</div>
+          <div className="cursor-pointer text-2xl font-recoleta font-medium">Bookmarks.io</div>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 text-base md:flex">

@@ -5,7 +5,7 @@ import { Clock } from "lucide-react";
 export default function Hero() {
   return (
     <section className="flex min-h-[calc(100dvh-4rem)] items-center px-5 sm:px-6 lg:px-8">
-      <div className="mx-auto mt-10 lg:mt-0 grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
+      <div className="mx-auto mt-10 lg:mt-0 grid w-full max-w-6xl grid-cols-1 items-center gap-12 md:gap-5 lg:grid-cols-2">
         {/* CTA section */}
         <div className="flex justify-center lg:justify-end">
           <div className="mx-auto flex w-full max-w-md flex-col space-y-4 text-left lg:mx-0 lg:text-left">
