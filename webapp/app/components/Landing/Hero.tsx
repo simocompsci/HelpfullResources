@@ -3,10 +3,10 @@ import mobileHero from "@/public/images/mobileHero.png";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[calc(100dvh-4rem)]">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center lg:grid-cols-2">
+    <section className="flex min-h-[calc(100dvh-4rem)] items-start">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 lg:grid-cols-2  mt-10">
         {/* Images section */}
-        <div className="flex justify-center">
+        <div className="flex justify-end">
           <Image
             src={mobileHero}
             alt="mobileHero"
@@ -16,8 +16,8 @@ export default function Hero() {
         </div>
 
         {/* CTA section */}
-        <div className="flex flex-col justify-center space-y-4 md:mr-30">
-          <h1 className="font-recoleta font-medium  text-[2.5rem]/[2.75rem] tracking-[-0.8px] lg:text-[3.125rem]/[3.25rem] lg:tracking-[-0.8px]">
+        <div className="flex flex-col justify-center space-y-4">
+          <h1 className="font-recoleta font-medium max-w-md text-[2.5rem]/[2.75rem] tracking-[-0.8px] lg:text-[3.125rem]/[3.25rem] lg:tracking-[-0.8px]">
             All Of Your Bookmarks In One Place
           </h1>
 
