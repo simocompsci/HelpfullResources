@@ -14,16 +14,15 @@ const recoleta = localFont({
     {
       path: "../fonts/Recoleta-RegularDEMO.otf",
       weight: "500",
-      style: "normal",
+      style: "medium",
     },
     {
       path: "../fonts/Recoleta-RegularDEMO.otf",
       weight: "700",
-      style: "normal",
+      style: "bold",
     },
   ],
   variable: "--font-recoleta",
-  display: "swap",
 });
 
 const inter = Inter({

@@ -17,7 +17,7 @@ export default function Hero() {
 
         {/* CTA section */}
         <div className="flex flex-col justify-center space-y-4">
-          <h1 className="font-serif text-[2.5rem]/[2.75rem] tracking-[-0.8px] lg:text-[3.125rem]/[3.25rem] lg:tracking-[-0.8px] font-medium">
+          <h1 className="font-recoleta  text-[2.5rem]/[2.75rem] tracking-[-0.8px] lg:text-[3.125rem]/[3.25rem] lg:tracking-[-0.8px] font-bold">
             Big Catchy Phrase
           </h1>
 
