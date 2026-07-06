@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="flex justify-center lg:justify-end">
           <div className="mx-auto flex w-full max-w-md flex-col space-y-4 text-left lg:mx-0 lg:text-left">
             <div className="flex justify-start text-sm lg:justify-start">
-              <button className="group inline-flex w-fit items-center gap-1.5 rounded-[2px] border border-gray-200 py-1 pl-2.5 pr-1 transition-colors duration-100">
+              <button className="group inline-flex w-fit items-center font-medium gap-1.5 rounded-[2px] border border-gray-200 py-1 pl-2.5 pr-1 transition-colors duration-100">
                 <span>AI Search</span>
 
                 <span className="flex items-center gap-1.5 rounded-[2px] bg-gray-200 p-1">
@@ -41,7 +41,7 @@ export default function Hero() {
         </div>
 
         {/* Images section */}
-        <div className="flex justify-center lg:justify-start">
+        <div className="flex justify-center lg:justify-center">
           <Image
             src={mobileHero}
             alt="mobileHero"
