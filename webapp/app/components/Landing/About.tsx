@@ -8,13 +8,13 @@ export default function About() {
           </h1>
 
           <div>
-            <p className="text-base text-justify text-gray-600 sm:text-lg">
-              Save everything worth remembering in one place—from articles,
-              videos, websites, and AI tools to books, music, and anything else
-              you discover online. Our goal is simple: provide a fast,
-              organized, and reliable home for everything you want to come back
-              to, with all the features you d expect from a modern bookmarking
-              platform.
+            <p className="text-base text-justify text-gray-600 sm:text-lg font-medium">
+              <span className="text-black">Save everything </span>worth
+              remembering in <span className="text-black">one place </span>from
+              articles, videos, websites, AI tools , books, music, and anything
+              else you discover online. Our goal is to provide a{" "}
+              <span className="text-black">fast, organized, and reliable </span>home for everything you  want to
+              <span className="text-black"> come back to.</span>
             </p>
 
             <button className="mt-5 rounded-[3px] bg-black p-3 text-white">

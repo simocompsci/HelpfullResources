@@ -13,9 +13,9 @@ export default function Hero() {
               <button className="group inline-flex w-fit items-center font-medium gap-1.5 rounded-[2px] border border-gray-200 py-1 pl-2.5 pr-1 transition-colors duration-100">
                 <span>AI Search</span>
 
-                <span className="flex items-center gap-1.5 rounded-[2px] bg-[rgba(31,167,122,0.08)] p-1">
+                <span className="flex items-center gap-1.5 rounded-[2px] text-blue-400 bg-[rgba(31,167,122,0.08)] p-1">
                   Coming Soon
-                  <Clock size={18} className="text-gray-700" />
+                  <Clock size={18} className="text-blue-400" />
                 </span>
               </button>
             </div>
@@ -24,8 +24,11 @@ export default function Hero() {
               All Of Your Bookmarks In One Place
             </h1>
 
-            <p className="text-gray-600 text-base sm:text-lg">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            <p className="text-gray-600 text-base sm:text-lg font-medium">
+              Centralized <span className="text-black">Bookmarking App </span>
+              That&apos;s <span className="text-black">Fast</span> ,{" "}
+              <span className="text-black">Intuitive </span>
+              And <span className="text-black">Works Everywhere</span>
             </p>
 
             <div className="flex flex-col gap-3 pt-2 font-medium sm:flex-row">
