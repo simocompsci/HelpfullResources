@@ -29,11 +29,11 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col gap-3 pt-2 font-medium sm:flex-row">
-              <button className="w-full cursor-pointer rounded-sm bg-black px-4 py-3 text-white sm:w-auto">
+              <button className="w-full cursor-pointer rounded-[2px] bg-black px-4 py-3 text-white sm:w-auto">
                 Get it on the App Store
               </button>
 
-              <button className="w-full cursor-pointer rounded-sm border border-gray-300 bg-white px-4 py-3 text-black sm:w-auto">
+              <button className="w-full cursor-pointer rounded-[2px] border border-gray-300 bg-white px-4 py-3 text-black sm:w-auto">
                 Get it on Google Play
               </button>
             </div>

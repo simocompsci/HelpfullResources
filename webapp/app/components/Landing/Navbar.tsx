@@ -19,23 +19,23 @@ export default function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 text-base md:flex">
-            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[2px] px-2 py-1 hover:bg-gray-100">
               About Us
             </a>
-            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[2px] px-2 py-1 hover:bg-gray-100">
               Features
             </a>
-            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[2px] px-2 py-1 hover:bg-gray-100">
               Platforms
             </a>
-            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[2px] px-2 py-1 hover:bg-gray-100">
               Contact Us
             </a>
           </div>
 
           {/* Desktop Button */}
           <div className="hidden md:block">
-            <button className="rounded-sm bg-black px-4 py-2 text-white transition-colors hover:bg-gray-900">
+            <button className="rounded-[2px] bg-black px-4 py-2 text-white transition-colors hover:bg-gray-900">
               Sign In
             </button>
           </div>
@@ -106,7 +106,7 @@ export default function NavBar() {
             </a>
           </div>
 
-          <button className="mt-auto w-full rounded-sm bg-black px-4 py-2 text-white transition-colors hover:bg-gray-900">
+          <button className="mt-auto w-full rounded-[2px] bg-black px-4 py-2 text-white transition-colors hover:bg-gray-900">
             Sign In
           </button>
         </div>
