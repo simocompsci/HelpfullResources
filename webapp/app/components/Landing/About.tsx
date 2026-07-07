@@ -13,7 +13,7 @@ export default function About() {
               videos, websites, and AI tools to books, music, and anything else
               you discover online. Our goal is simple: provide a fast,
               organized, and reliable home for everything you want to come back
-              to, with all the features you'd expect from a modern bookmarking
+              to, with all the features you d expect from a modern bookmarking
               platform.
             </p>
 

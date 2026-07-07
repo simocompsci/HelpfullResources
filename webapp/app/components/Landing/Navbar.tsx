@@ -7,9 +7,9 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200 bg-[#fefdfb] ">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200 bg-[#fefdfb]">
       {" "}
-      <div className="mx-auto w-full max-w-6xl px-6 md:px-0">
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
         {/* Top Bar */}
         <div className="flex h-16 items-center justify-between font-medium">
           {/* Logo */}
