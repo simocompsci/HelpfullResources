@@ -11,7 +11,7 @@ export default function About() {
             <p className="text-base text-justify text-gray-600 sm:text-lg font-medium">
               <span className="text-black">Save everything </span>worth
               remembering in <span className="text-black">one place </span>from
-              articles, videos, websites, AI tools , books, music, and anything
+              articles, videos, websites, AI tools, books, music, and anything
               else you discover online. Our goal is to provide a{" "}
               <span className="text-black">fast, organized, and reliable </span>home for everything you  want to
               <span className="text-black"> come back to.</span>
