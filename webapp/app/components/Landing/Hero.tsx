@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="flex min-h-[calc(100dvh-4rem)] items-center pt-16 px-5 sm:px-6 lg:px-8">
       <div className="mx-auto mt-10 lg:mt-0 grid w-full max-w-6xl grid-cols-1 items-center gap-12 md:gap-5 lg:grid-cols-2">
         {/* CTA section */}
-        <div className="flex justify-center lg:justify-end">
+        <div className="flex justify-center lg:justify-start">
           <div className="mx-auto flex w-full max-w-md flex-col space-y-4 text-left lg:mx-0 lg:text-left">
             <div className="flex justify-start text-sm lg:justify-start">
               <button className="group inline-flex w-fit items-center font-medium gap-1.5 rounded-[2px] border border-gray-200 py-1 pl-2.5 pr-1 transition-colors duration-100">
