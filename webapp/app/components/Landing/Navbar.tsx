@@ -19,16 +19,16 @@ export default function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 text-base md:flex">
-            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
               About Us
             </a>
-            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
               Features
             </a>
-            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
               Platforms
             </a>
-            <a href="#" className="rounded-sm px-2 py-1 hover:bg-gray-100">
+            <a href="#" className="rounded-[3px] px-2 py-1 hover:bg-gray-100">
               Contact Us
             </a>
           </div>
