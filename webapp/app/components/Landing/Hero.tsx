@@ -4,7 +4,7 @@ import { Clock } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[calc(100dvh-4rem)] items-center px-5 sm:px-6 lg:px-8">
+    <section className="flex min-h-[calc(100dvh-4rem)] items-center pt-16 px-5 sm:px-6 lg:px-8">
       <div className="mx-auto mt-10 lg:mt-0 grid w-full max-w-6xl grid-cols-1 items-center gap-12 md:gap-5 lg:grid-cols-2">
         {/* CTA section */}
         <div className="flex justify-center lg:justify-end">
@@ -13,7 +13,7 @@ export default function Hero() {
               <button className="group inline-flex w-fit items-center font-medium gap-1.5 rounded-[2px] border border-gray-200 py-1 pl-2.5 pr-1 transition-colors duration-100">
                 <span>AI Search</span>
 
-                <span className="flex items-center gap-1.5 rounded-[2px] bg-gray-200 p-1">
+                <span className="flex items-center gap-1.5 rounded-[2px] bg-[rgba(31,167,122,0.08)] p-1">
                   Coming Soon
                   <Clock size={18} className="text-gray-700" />
                 </span>
@@ -41,7 +41,7 @@ export default function Hero() {
         </div>
 
         {/* Images section */}
-        <div className="flex justify-center lg:justify-center">
+        <div className="flex justify-center lg:justify-start">
           <Image
             src={mobileHero}
             alt="mobileHero"

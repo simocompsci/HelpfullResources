@@ -3,17 +3,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="relative w-full border-b bg-[#fefdfb] border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200 bg-[#fefdfb] ">
+      {" "}
       <div className="mx-auto w-full max-w-6xl px-6">
         {/* Top Bar */}
         <div className="flex h-16 items-center justify-between font-medium">
           {/* Logo */}
-          <div className="cursor-pointer text-2xl font-recoleta font-medium">Bookmarks.io</div>
+          <div className="cursor-pointer text-2xl font-recoleta font-medium">
+            Bookmarks.io
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 text-base md:flex">
@@ -63,7 +65,6 @@ export default function NavBar() {
           </button>
         </div>
       </div>
-
       {/* Mobile Menu */}
       <div
         className={`fixed inset-x-0 top-16 bottom-0 z-40 bg-[#fefdfb] md:hidden
