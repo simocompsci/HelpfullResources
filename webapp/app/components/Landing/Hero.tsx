@@ -21,7 +21,8 @@ export default function Hero() {
             </div>
 
             <h1 className="font-recoleta max-w-md text-4xl font-medium tracking-[-0.8px] sm:text-5xl lg:text-6xl">
-              All Of Your Bookmarks In One Place
+              All Of Your Bookmarks In
+              <span> One Place </span> 
             </h1>
 
             <p className="text-gray-600 text-base sm:text-lg font-medium">
