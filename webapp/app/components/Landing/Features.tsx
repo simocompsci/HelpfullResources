@@ -6,8 +6,8 @@ export default function Features() {
           <div className="flex flex-col gap-5 md:flex md:flex-row  justify-between md:items-end">
             <div className="text-[1.75rem]/8 font-medium tracking-[-0.72px] text-foreground-primary lg:text-[2.25rem]/[2.5rem]">
               <p className="text-black max-w-xl text-balance">
-                The features section The features section The features section
-                section
+                The features section The features section The
+                <span className="text-gray-600"> features section section</span>
               </p>
             </div>
             <div>
@@ -16,11 +16,13 @@ export default function Features() {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-            <div className="aspect-square bg-gray-200 rounded-[2px]"></div>
-            <div className="aspect-square bg-gray-200 rounded-[2px]"></div>
-            <div className="aspect-square bg-gray-200 rounded-[2px]"></div>
-            <div className="aspect-square bg-gray-200 rounded-[2px]"></div>
+          <div className="grid grid-cols-1 gap-5 mt-10 md:grid-cols-3">
+            <div className="h-80 md:col-span-2 rounded bg-gray-200"></div>
+            <div className="h-80 rounded bg-gray-200"></div>
+
+            <div className="h-80 rounded bg-gray-200"></div>
+            <div className="h-80 rounded bg-gray-200"></div>
+            <div className="h-80 rounded bg-gray-200"></div>
           </div>
         </div>
       </div>
