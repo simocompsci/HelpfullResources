@@ -11,7 +11,7 @@ export default function Features() {
               </p>
             </div>
             <div>
-              <button className="text-white rounded-[2px] bg-black py-3 px-5">
+              <button className="text-white rounded-[2px] bg-black py-3 px-5 cursor-pointer">
                 Get Started
               </button>
             </div>

@@ -17,7 +17,7 @@ export default function About() {
               <span className="text-black"> come back to.</span>
             </p>
 
-            <button className="mt-5 rounded-[3px] bg-black p-3 text-white">
+            <button className="mt-5 rounded-[3px] bg-black p-3 text-white cursor-pointer">
               Get Started
             </button>
           </div>
