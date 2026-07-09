@@ -1,7 +1,7 @@
 export default function Features() {
   return (
     <section className="mt-16">
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl md:px-5">
         <div className="bg-white rounded-[2px] py-5 px-5">
           <div className="flex flex-col gap-5 md:flex md:flex-row  justify-between md:items-end">
             <div className="text-[1.75rem]/8 font-medium tracking-[-0.72px] text-foreground-primary lg:text-[2.25rem]/[2.5rem]">

@@ -79,34 +79,34 @@ export default function NavBar() {
           <div className="flex flex-col">
             <a
               href="#"
-              className="mx-2 border-b border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
+              className="mx-2 border-b font-medium border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
             >
               About Us
             </a>
 
             <a
               href="#"
-              className="mx-2 border-b border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
+              className="mx-2 border-b font-medium border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
             >
               Features
             </a>
 
             <a
               href="#"
-              className="mx-2 border-b border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
+              className="mx-2 border-b font-medium border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
             >
               Platforms
             </a>
 
             <a
               href="#"
-              className="mx-2 px-3 py-3 transition-colors hover:bg-gray-100"
+              className="mx-2 px-3 py-3 font-medium transition-colors hover:bg-gray-100"
             >
               Contact Us
             </a>
           </div>
 
-          <button className="mt-auto w-full rounded-[2px] bg-black px-4 py-2 text-white transition-colors hover:bg-gray-900">
+          <button className="mt-auto w-full font-medium rounded-[2px] bg-black px-4 py-2 text-white transition-colors hover:bg-gray-900">
             Sign In
           </button>
         </div>
