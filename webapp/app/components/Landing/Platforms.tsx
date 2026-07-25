@@ -1,10 +1,10 @@
   export default function Platforms() {
     return (
-      <section className="mt-16 border-y border-gray-300">
+      <section className="mt-16 border-y border-border-sub">
         <div className="mx-auto max-w-6xl md:px-5">
-          <div className="bg-white  border-x border-gray-300">
+          <div className="bg-white  border-x border-border-sub">
             <div className="flex flex-col gap-5  justify-between">
-              <div className="border-b py-5 px-5 border-gray-300">
+              <div className="border-b py-5 px-5 border-border-sub">
                 <h1 className="text-black max-w-lg md:max-w-lg text-balance text-[1.75rem]/8 font-medium tracking-[-0.72px] lg:text-[2.25rem]/[2.5rem]">
                 Easy To Access{" "}
                 <span className="text-gray-600"> From All Platforms</span>{" "}

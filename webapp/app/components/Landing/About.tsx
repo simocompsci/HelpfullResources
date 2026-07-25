@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <section className="mt-16 border-y border-gray-300">
+    <section className="mt-16 border-y border-border-sub">
       <div className="mx-auto max-w-6xl px-5">
-        <div className="flex flex-col gap-4 border-x border-gray-300 py-5 px-5">
+        <div className="flex flex-col gap-4 border-x border-border-sub py-5 px-5">
           <h1 className="font-recoleta text-4xl font-medium tracking-[-0.8px] lg:text-5xl">
             Built for curious minds, designed for everyone.
           </h1>

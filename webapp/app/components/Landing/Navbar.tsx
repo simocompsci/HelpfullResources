@@ -7,7 +7,7 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200 bg-[#fefdfb]">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-border-sub bg-[#fefdfb]">
       {" "}
       <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
         {/* Top Bar */}
@@ -43,7 +43,7 @@ export default function NavBar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="relative flex h-9 w-9 items-center justify-center rounded-[4px] border border-gray-300 md:hidden"
+            className="relative flex h-9 w-9 items-center justify-center rounded-[4px] border border-border-sub md:hidden"
           >
             <Menu
               size={22}
@@ -79,21 +79,21 @@ export default function NavBar() {
           <div className="flex flex-col">
             <a
               href="#"
-              className="mx-2 border-b font-medium border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
+              className="mx-2 border-b font-medium border-border-sub px-3 py-3 transition-colors hover:bg-gray-100"
             >
               About Us
             </a>
 
             <a
               href="#"
-              className="mx-2 border-b font-medium border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
+              className="mx-2 border-b font-medium border-border-sub px-3 py-3 transition-colors hover:bg-gray-100"
             >
               Features
             </a>
 
             <a
               href="#"
-              className="mx-2 border-b font-medium border-gray-200 px-3 py-3 transition-colors hover:bg-gray-100"
+              className="mx-2 border-b font-medium border-border-sub px-3 py-3 transition-colors hover:bg-gray-100"
             >
               Platforms
             </a>
