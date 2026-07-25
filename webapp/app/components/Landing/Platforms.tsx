@@ -13,18 +13,18 @@
               </div>
               
               <div className="grid grid-cols-2 py-5 px-5 gap-5 md:grid-cols-4 mb-5">
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
-                <div className="h-60 rounded-[3px] bg-gray-200"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
+                <div className="h-60 rounded-[3px] border border-gray-200 bg-neutral-100"></div>
               </div>
             </div>
           </div>
