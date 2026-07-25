@@ -17,12 +17,12 @@ export default function Features() {
             </div>
           </div>
           <div className="grid grid-cols-1 gap-5 mt-10 md:grid-cols-3">
-            <div className="h-80 md:col-span-2 rounded border border-gray-200 bg-neutral-100"></div>
-            <div className="h-80 rounded  border border-gray-200 bg-neutral-100"></div>
+            <div className="h-80 md:col-span-2 rounded border border-border-sub bg-neutral-100"></div>
+            <div className="h-80 rounded  border border-border-sub bg-neutral-100"></div>
 
-            <div className="h-80 rounded border border-gray-200 bg-neutral-100"></div>
-            <div className="h-80 rounded border border-gray-200 bg-neutral-100"></div>
-            <div className="h-80 rounded border border-gray-200 bg-neutral-100"></div>
+            <div className="h-80 rounded border border-border-sub bg-neutral-100"></div>
+            <div className="h-80 rounded border border-border-sub bg-neutral-100"></div>
+            <div className="h-80 rounded border border-border-sub bg-neutral-100"></div>
           </div>
         </div>
       </div>
