@@ -7,7 +7,7 @@ const platforms = [
   { src: "/images/platfroms/tiktok.svg", alt: "TikTok", label: "Bookmark trending TikTok videos" },
   { src: "/images/platfroms/linkedin.svg", alt: "LinkedIn", label: "Save articles and posts from LinkedIn" },
   { src: "/images/platfroms/reddit.svg", alt: "Reddit", label: "Save threads and posts from Reddit" },
-  { src: "/images/platfroms/safari.svg", alt: "Safari", label: "Import bookmarks from Safari" },
+  { src: "/images/platfroms/safari.svg", alt: "Safari", label: "Save tabs and pages from Safari" },
   { src: "/images/platfroms/chrome.svg", alt: "Chrome", label: "Save tabs and pages from Chrome" },
 ];
 
@@ -34,7 +34,7 @@ export default function Platforms() {
                   <img
                     src={platform.src}
                     alt={platform.alt}
-                    className="w-12 h-12 object-contain"
+                    className="w-16 h-16 object-contain"
                   />
                   <p className="text-sm text-gray-600 text-center">
                     {platform.label}
