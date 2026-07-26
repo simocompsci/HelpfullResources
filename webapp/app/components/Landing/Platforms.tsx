@@ -6,8 +6,8 @@
             <div className="flex flex-col gap-5  justify-between">
               <div className="border-b py-5 px-5 border-border-sub">
                 <h1 className="text-black max-w-lg md:max-w-lg text-balance text-[1.75rem]/8 font-medium tracking-[-0.72px] lg:text-[2.25rem]/[2.5rem]">
-                Easy To Access{" "}
-                <span className="text-gray-600"> From All Platforms</span>{" "}
+                Save Your Bookmarks{" "}
+                <span className="text-gray-600"> From All Platforms Easily</span>{" "}
               </h1>
 
               </div>
