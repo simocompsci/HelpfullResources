@@ -1,28 +1,14 @@
-import { Pinterest } from "@/components/ui/svgs/pinterest";
-import { Youtube } from "@/components/ui/svgs/youtube";
-import { Twitter } from "@/components/ui/svgs/twitter";
-import { FacebookIcon } from "@/components/ui/svgs/facebookIcon";
-import { InstagramIcon } from "@/components/ui/svgs/instagramIcon";
-import { TiktokIconLight } from "@/components/ui/svgs/tiktokIconLight";
-import { Linkedin } from "@/components/ui/svgs/linkedin";
-import { Reddit } from "@/components/ui/svgs/reddit";
-import { Threads } from "@/components/ui/svgs/threads";
-import { Safari } from "@/components/ui/svgs/safari";
-import { Google } from "@/components/ui/svgs/google";
-
 const platforms = [
-  { icon: Pinterest, label: "Save pins and boards from Pinterest" },
-  { icon: Youtube, label: "Bookmark your favorite YouTube videos" },
-  { icon: Twitter, label: "Save tweets and threads for later" },
-  { icon: FacebookIcon, label: "Save posts and links from Facebook" },
-  { icon: InstagramIcon, label: "Save reels and posts from Instagram" },
-  { icon: TiktokIconLight, label: "Bookmark trending TikTok videos" },
-  { icon: Linkedin, label: "Save articles and posts from LinkedIn" },
-  { icon: Reddit, label: "Save threads and posts from Reddit" },
-  { icon: Threads, label: "Save conversations from Threads" },
-  { icon: Safari, label: "Import bookmarks from Safari" },
-  { icon: Google, label: "Sync your Google bookmarks" },
-  { icon: Google, label: "Sync your Google bookmarks" },
+  { src: "/images/platfroms/pinterest.svg", alt: "Pinterest", label: "Save pins and boards from Pinterest" },
+  { src: "/images/platfroms/youtube.svg", alt: "YouTube", label: "Bookmark your favorite YouTube videos" },
+  { src: "/images/platfroms/twitter.svg", alt: "Twitter", label: "Save tweets and threads for later" },
+  { src: "/images/platfroms/facebook.svg", alt: "Facebook", label: "Save posts and links from Facebook" },
+  { src: "/images/platfroms/instagram.svg", alt: "Instagram", label: "Save reels and posts from Instagram" },
+  { src: "/images/platfroms/tiktok.svg", alt: "TikTok", label: "Bookmark trending TikTok videos" },
+  { src: "/images/platfroms/linkedin.svg", alt: "LinkedIn", label: "Save articles and posts from LinkedIn" },
+  { src: "/images/platfroms/reddit.svg", alt: "Reddit", label: "Save threads and posts from Reddit" },
+  { src: "/images/platfroms/safari.svg", alt: "Safari", label: "Import bookmarks from Safari" },
+  { src: "/images/platfroms/chrome.svg", alt: "Chrome", label: "Save tabs and pages from Chrome" },
 ];
 
 export default function Platforms() {
@@ -41,10 +27,15 @@ export default function Platforms() {
             <div className="grid grid-cols-2 py-5 px-5 gap-5 md:grid-cols-4 mb-5">
               {platforms.map((platform) => (
                 <div
-                  key={platform.label}
+                  key={platform.alt}
                   className="h-60 rounded-[3px] border border-border-sub bg-neutral-100 flex flex-col items-center justify-center gap-4 p-5"
                 >
-                  <platform.icon className="w-12 h-12" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={platform.src}
+                    alt={platform.alt}
+                    className="w-12 h-12 object-contain"
+                  />
                   <p className="text-sm text-gray-600 text-center">
                     {platform.label}
                   </p>
