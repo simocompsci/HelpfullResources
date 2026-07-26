@@ -1,11 +1,32 @@
 export default function Guide() {
   return (
-    <section className="mt-16 mb-5">
-      <div className="mx-auto max-w-6xl px-10">
-        <div className="bg-neutral-100 flex items-center justify-center border border-border-sub rounded-[3px] h-140">
-          <div className="w-[92%] h-[85%] overflow-hidden">
+    <section className="mt-12 md:mt-16 mb-5">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10">
+        <div
+          className="
+            bg-neutral-100
+            border border-border-sub
+            rounded-[3px]
+            flex items-center justify-center
+            h-[220px]
+            sm:h-[320px]
+            md:h-[450px]
+            lg:h-[560px]
+          "
+        >
+          <div
+            className="
+              w-[96%]
+              h-[94%]
+              sm:w-[95%]
+              sm:h-[92%]
+              md:w-[95%]
+              md:h-[91%]
+              overflow-hidden
+            "
+          >
             <video
-              className="w-full h-full object-cover rounded-[3px]"
+              className="w-full h-full object-cover rounded md:rounded-[6px]"
               controls
               autoPlay
               muted
