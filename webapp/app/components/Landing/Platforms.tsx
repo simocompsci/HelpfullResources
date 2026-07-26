@@ -9,7 +9,6 @@ import { Reddit } from "@/components/ui/svgs/reddit";
 import { Threads } from "@/components/ui/svgs/threads";
 import { Safari } from "@/components/ui/svgs/safari";
 import { Google } from "@/components/ui/svgs/google";
-import { GoogleWordmark } from "@/components/ui/svgs/googleWordmark";
 
 const platforms = [
   { icon: Pinterest, label: "Save pins and boards from Pinterest" },
@@ -23,7 +22,7 @@ const platforms = [
   { icon: Threads, label: "Save conversations from Threads" },
   { icon: Safari, label: "Import bookmarks from Safari" },
   { icon: Google, label: "Sync your Google bookmarks" },
-  { icon: GoogleWordmark, label: "Discover and save content from Google" },
+  { icon: Google, label: "Sync your Google bookmarks" },
 ];
 
 export default function Platforms() {
