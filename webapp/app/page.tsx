@@ -4,6 +4,8 @@ import Guide from "./components/Landing/Guide";
 import Hero from "./components/Landing/Hero";
 import NavBar from "./components/Landing/Navbar";
 import Platforms from "./components/Landing/Platforms";
+import Footer from "./components/Landing/Footer";
+
 
 export default function Page() {
   return (
@@ -15,6 +17,7 @@ export default function Page() {
         <Features/>
         <Platforms/>
         <Guide/>
+        <Footer/>
       </main>
     </>
   );
